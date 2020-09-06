@@ -20,7 +20,7 @@ class InventoryItemsController < ApplicationController
 
     respond_to do |format|
       if @inventory_item.save
-        format.html { redirect_to inventory_item_show_path(@inventory_item), notice: 'Inventory item was successfully created.' }
+        format.html { redirect_to @inventory_item, notice: 'Inventory item was successfully created.' }
         format.json { render :show, status: :created, location: @inventory_item }
       else
         format.html { render :new }
@@ -32,7 +32,7 @@ class InventoryItemsController < ApplicationController
   def update
     respond_to do |format|
       if @inventory_item.update(inventory_item_params)
-        format.html { redirect_to inventory_item_show_path(@inventory_item), notice: 'Inventory item was successfully updated.' }
+        format.html { redirect_to @inventory_item, notice: 'Inventory item was successfully updated.' }
         format.json { render :show, status: :ok, location: @inventory_item }
       else
         format.html { render :edit }
@@ -51,7 +51,7 @@ class InventoryItemsController < ApplicationController
 
   private
     def set_inventory_item
-      @inventory_item = InventoryItem.find(params[:id])
+      @inventory_item = InventoryItem.friendly.find(params[:id])
     end
 
     def inventory_item_params

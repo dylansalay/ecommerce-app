@@ -16,7 +16,7 @@
   <tbody>
     <% @inventory_items.each do |inventory_item| %>
       <tr>
-        <td><%= inventory_item.title %></td>
+        <td><%= link_to inventory_item.title, inventory_item_path(inventory_item) %></td>
         <td><%= inventory_item.subtitle %></td>
         <td><%= inventory_item.body %></td>
         <td><%= inventory_item.unit_cost %></td>

@@ -16,6 +16,7 @@
   <tbody>
     <% @inventory_items.each do |inventory_item| %>
       <tr>
+        <td><%= image_tag inventory_item.thumb_image %></td>
         <td><%= link_to inventory_item.title, inventory_item_path(inventory_item) %></td>
         <td><%= inventory_item.subtitle %></td>
         <td><%= inventory_item.body %></td>

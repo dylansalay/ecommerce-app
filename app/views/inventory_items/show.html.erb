@@ -1,22 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+
+<%= image_tag @inventory_item.main_image %>
+
+<h1>
   <%= @inventory_item.title %>
-</p>
+</h1>
 
-<p>
-  <strong>Subtitle:</strong>
+<em>
   <%= @inventory_item.subtitle %>
-</p>
+</em>
 
 <p>
-  <strong>Body:</strong>
   <%= @inventory_item.body %>
 </p>
 
 <p>
-  <strong>Unit cost:</strong>
   <%= @inventory_item.unit_cost %>
 </p>
 

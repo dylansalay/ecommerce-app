@@ -3,9 +3,12 @@ class InventoryItemsController < ApplicationController
 
   def index
     @inventory_items = InventoryItem.all
+    @page_title = "Inventory Items"
   end
 
   def show
+    @page_title = @inventory_item.title
+    @seo_keywords = @inventory_item.title
   end
 
   def new

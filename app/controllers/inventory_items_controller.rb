@@ -1,5 +1,7 @@
 class InventoryItemsController < ApplicationController
   before_action :set_inventory_item, only: [:show, :edit, :update, :destroy]
+  layout 'inventory_item'
+
 
   def index
     @inventory_items = InventoryItem.all

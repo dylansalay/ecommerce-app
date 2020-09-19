@@ -15,16 +15,7 @@
 
   <tbody>
     <% @inventory_items.each do |inventory_item| %>
-      <tr>
-        <td><%= image_tag inventory_item.thumb_image %></td>
-        <td><%= link_to inventory_item.title, inventory_item_path(inventory_item) %></td>
-        <td><%= inventory_item.subtitle %></td>
-        <td><%= inventory_item.body %></td>
-        <td><%= inventory_item.unit_cost %></td>
-        <td><%= link_to 'Show', inventory_item %></td>
-        <td><%= link_to 'Edit', edit_inventory_item_path(inventory_item) %></td>
-        <td><%= link_to 'Destroy', inventory_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <%= render @inventory_items %>
     <% end %>
   </tbody>
 </table>

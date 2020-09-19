@@ -3,6 +3,7 @@ Rails.application.routes.draw do
       resources :users
       resources :categories
       resources :inventory_items
+      resources :admin_users
 
       root to: "users#index"
     end

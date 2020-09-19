@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class UserDashboard < Administrate::BaseDashboard
+class AdminUserDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -46,6 +46,7 @@ class UserDashboard < Administrate::BaseDashboard
   remember_created_at
   created_at
   updated_at
+  type
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -55,6 +56,7 @@ class UserDashboard < Administrate::BaseDashboard
   email
   password
   name
+  type
   ].freeze
 
   # COLLECTION_FILTERS
@@ -69,10 +71,10 @@ class UserDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how users are displayed
+  # Overwrite this method to customize how admin users are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(user)
-  #   "User ##{user.id}"
+  # def display_resource(admin_user)
+  #   "AdminUser ##{admin_user.id}"
   # end
 end

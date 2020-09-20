@@ -8,11 +8,11 @@ class CategoryDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    inventory_items: Field::HasMany,
-    id: Field::Number,
-    title: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    inventory_items: Field::HasMany.with_options(searchable: false),
+    id: Field::Number.with_options(searchable: false),
+    title: Field::String.with_options(searchable: true),
+    created_at: Field::DateTime.with_options(searchable: false),
+    updated_at: Field::DateTime.with_options(searchable: false),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -21,18 +21,18 @@ class CategoryDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  inventory_items
   id
   title
+  inventory_items
   created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  inventory_items
   id
   title
+  inventory_items
   created_at
   updated_at
   ].freeze

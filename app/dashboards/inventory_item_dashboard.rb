@@ -8,17 +8,17 @@ class InventoryItemDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    category: Field::BelongsTo,
-    id: Field::Number,
-    title: Field::String,
-    body: Field::Text,
-    unit_cost: Field::String.with_options(searchable: false),
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
-    subtitle: Field::String,
-    main_image: Field::Text,
-    thumb_image: Field::Text,
-    slug: Field::String,
+    category: Field::BelongsTo.with_options(searchable: false),
+    id: Field::Number.with_options(searchable: false),
+    title: Field::String.with_options(searchable: true),
+    body: Field::Text.with_options(searchable: true),
+    unit_cost: Field::String.with_options(searchable: true),
+    created_at: Field::DateTime.with_options(searchable: false),
+    updated_at: Field::DateTime.with_options(searchable: false),
+    subtitle: Field::String.with_options(searchable: true),
+    main_image: Field::Text.with_options(searchable: false),
+    thumb_image: Field::Text.with_options(searchable: false),
+    slug: Field::String.with_options(searchable: false),
   }.freeze
 
   # COLLECTION_ATTRIBUTES

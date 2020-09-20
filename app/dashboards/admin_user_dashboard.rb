@@ -8,17 +8,17 @@ class AdminUserDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    id: Field::Number,
-    email: Field::String,
-    encrypted_password: Field::String,
-    password: Field::String,
-    name: Field::String,
-    reset_password_token: Field::String,
-    reset_password_sent_at: Field::DateTime,
-    remember_created_at: Field::DateTime,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
-    type: Field::String,
+    id: Field::Number.with_options(searchable: false),
+    email: Field::String.with_options(searchable: true),
+    encrypted_password: Field::String.with_options(searchable: false),
+    password: Field::String.with_options(searchable: false),
+    name: Field::String.with_options(searchable: true),
+    reset_password_token: Field::String.with_options(searchable: false),
+    reset_password_sent_at: Field::DateTime.with_options(searchable: false),
+    remember_created_at: Field::DateTime.with_options(searchable: false),
+    created_at: Field::DateTime.with_options(searchable: false),
+    updated_at: Field::DateTime.with_options(searchable: false),
+    type: Field::String.with_options(searchable: false),
   }.freeze
 
   # COLLECTION_ATTRIBUTES

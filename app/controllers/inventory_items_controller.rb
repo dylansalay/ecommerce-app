@@ -1,11 +1,10 @@
 class InventoryItemsController < ApplicationController
-  before_action :set_inventory_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_inventory_item, only: %i[show edit update destroy]
   layout 'inventory_item'
-
 
   def index
     @inventory_items = InventoryItem.all
-    @page_title = "Inventory Items"
+    @page_title = 'Inventory Items'
   end
 
   def show
@@ -17,8 +16,7 @@ class InventoryItemsController < ApplicationController
     @inventory_item = InventoryItem.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @inventory_item = InventoryItem.new(inventory_item_params)
@@ -55,11 +53,12 @@ class InventoryItemsController < ApplicationController
   end
 
   private
-    def set_inventory_item
-      @inventory_item = InventoryItem.friendly.find(params[:id])
-    end
 
-    def inventory_item_params
-      params.require(:inventory_item).permit(:title, :subtitle, :body, :unit_cost, :main_image, :thumb_image)
-    end
+  def set_inventory_item
+    @inventory_item = InventoryItem.friendly.find(params[:id])
+  end
+
+  def inventory_item_params
+    params.require(:inventory_item).permit(:title, :subtitle, :body, :unit_cost, :main_image, :thumb_image)
+  end
 end

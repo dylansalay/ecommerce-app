@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class InventoryItemDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -18,7 +18,7 @@ class InventoryItemDashboard < Administrate::BaseDashboard
     subtitle: Field::String.with_options(searchable: true),
     main_image: Field::Text.with_options(searchable: false),
     thumb_image: Field::Text.with_options(searchable: false),
-    slug: Field::String.with_options(searchable: false),
+    slug: Field::String.with_options(searchable: false)
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -27,40 +27,40 @@ class InventoryItemDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  category
-  id
-  title
-  body
+    category
+    id
+    title
+    body
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  category
-  id
-  title
-  body
-  unit_cost
-  created_at
-  updated_at
-  subtitle
-  main_image
-  thumb_image
-  slug
+    category
+    id
+    title
+    body
+    unit_cost
+    created_at
+    updated_at
+    subtitle
+    main_image
+    thumb_image
+    slug
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  category
-  title
-  body
-  unit_cost
-  subtitle
-  main_image
-  thumb_image
-  slug
+    category
+    title
+    body
+    unit_cost
+    subtitle
+    main_image
+    thumb_image
+    slug
   ].freeze
 
   # COLLECTION_FILTERS

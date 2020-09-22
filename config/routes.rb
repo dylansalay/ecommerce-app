@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   namespace :admin do
-      resources :users
-      resources :categories
-      resources :inventory_items
-      resources :admin_users
+    resources :users
+    resources :categories
+    resources :inventory_items
+    resources :admin_users
 
-      root to: "users#index"
-    end
+    root to: 'users#index'
+  end
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   root to: 'pages#home'
   get 'about', to: 'pages#about'

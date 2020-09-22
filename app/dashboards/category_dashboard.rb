@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class CategoryDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -12,7 +12,7 @@ class CategoryDashboard < Administrate::BaseDashboard
     id: Field::Number.with_options(searchable: false),
     title: Field::String.with_options(searchable: true),
     created_at: Field::DateTime.with_options(searchable: false),
-    updated_at: Field::DateTime.with_options(searchable: false),
+    updated_at: Field::DateTime.with_options(searchable: false)
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -21,28 +21,28 @@ class CategoryDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  id
-  title
-  inventory_items
-  created_at
+    id
+    title
+    inventory_items
+    created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  id
-  title
-  inventory_items
-  created_at
-  updated_at
+    id
+    title
+    inventory_items
+    created_at
+    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  inventory_items
-  title
+    inventory_items
+    title
   ].freeze
 
   # COLLECTION_FILTERS

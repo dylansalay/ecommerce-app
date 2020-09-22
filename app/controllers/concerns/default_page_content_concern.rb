@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DefaultPageContentConcern
   extend ActiveSupport::Concern
 
@@ -6,7 +8,7 @@ module DefaultPageContentConcern
   end
 
   def set_page_defaults
-    @page_title = "Posy"
-    @seo_keywords = "Posy Jewelry Bracelets"
+    @page_title = 'Posy'
+    @seo_keywords = 'Posy Jewelry Bracelets'
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddSlugToInventoryItems < ActiveRecord::Migration[6.0]
   def change
     add_column :inventory_items, :slug, :string

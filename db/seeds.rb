@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 3.times do |category|
   Category.create!(
     title: "Category #{category}"

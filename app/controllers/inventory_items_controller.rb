@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class InventoryItemsController < ApplicationController
   before_action :set_inventory_item, only: %i[show edit update destroy]
   layout 'inventory_item'

@@ -11,6 +11,8 @@
 # ExcludedMethods: refine
 Metrics/BlockLength:
   Max: 44
+  Exclude:
+    - 'db/schema.rb'
 
 # Offense count: 1
 # Configuration parameters: IgnoredMethods.

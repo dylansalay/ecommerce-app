@@ -36,6 +36,7 @@ group :development, :test do
   gem 'capybara', '~> 3.33'
   gem 'database_cleaner', '~> 1.8', '>= 1.8.5'
   gem 'factory_bot_rails', '~> 6.1'
+  gem 'faker', '~> 2.14'
   gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
   gem 'rubocop', '~> 0.91.0'
 end

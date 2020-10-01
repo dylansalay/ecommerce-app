@@ -5,13 +5,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :name, presence: true
-
-  def first_name
-    name.split.first
-  end
-
-  def last_name
-    name.split.last
-  end
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 end

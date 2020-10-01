@@ -14,7 +14,8 @@ class UserDashboard < Administrate::BaseDashboard
     email: Field::String.with_options(searchable: true),
     encrypted_password: Field::String.with_options(searchable: false),
     password: Field::String.with_options(searchable: false),
-    name: Field::String.with_options(searchable: true),
+    first_name: Field::String.with_options(searchable: true),
+    last_name: Field::String.with_options(searchable: true),
     reset_password_token: Field::String.with_options(searchable: false),
     reset_password_sent_at: Field::DateTime.with_options(searchable: false),
     remember_created_at: Field::DateTime.with_options(searchable: false),
@@ -30,7 +31,8 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    name
+    first_name
+    last_name
     email
     type
     encrypted_password
@@ -42,7 +44,8 @@ class UserDashboard < Administrate::BaseDashboard
     id
     email
     encrypted_password
-    name
+    first_name
+    last_name
     reset_password_token
     reset_password_sent_at
     remember_created_at
@@ -56,7 +59,8 @@ class UserDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     email
     password
-    name
+    first_name
+    last_name
   ].freeze
 
   # COLLECTION_FILTERS

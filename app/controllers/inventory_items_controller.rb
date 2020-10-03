@@ -2,6 +2,7 @@
 
 class InventoryItemsController < ApplicationController
   before_action :set_inventory_item, only: %i[show edit update destroy]
+  access all: [:show, :index], user: { except: [:destroy, :new, :create, :update, :edit] }, site_admin: :all
   layout 'inventory_item'
 
   def index

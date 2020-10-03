@@ -21,7 +21,8 @@ class UserDashboard < Administrate::BaseDashboard
     remember_created_at: Field::DateTime.with_options(searchable: false),
     created_at: Field::DateTime.with_options(searchable: false),
     updated_at: Field::DateTime.with_options(searchable: false),
-    type: Field::String.with_options(searchable: true)
+    type: Field::String.with_options(searchable: true),
+    roles: Field::String.with_options(searchable: true)
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -35,6 +36,7 @@ class UserDashboard < Administrate::BaseDashboard
     last_name
     email
     type
+    roles
     encrypted_password
   ].freeze
 
@@ -46,6 +48,8 @@ class UserDashboard < Administrate::BaseDashboard
     encrypted_password
     first_name
     last_name
+    type
+    roles
     reset_password_token
     reset_password_sent_at
     remember_created_at
@@ -61,6 +65,8 @@ class UserDashboard < Administrate::BaseDashboard
     password
     first_name
     last_name
+    type
+    roles
   ].freeze
 
   # COLLECTION_FILTERS

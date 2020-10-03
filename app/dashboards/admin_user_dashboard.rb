@@ -21,7 +21,8 @@ class AdminUserDashboard < Administrate::BaseDashboard
     remember_created_at: Field::DateTime.with_options(searchable: false),
     created_at: Field::DateTime.with_options(searchable: false),
     updated_at: Field::DateTime.with_options(searchable: false),
-    type: Field::String.with_options(searchable: false)
+    type: Field::String.with_options(searchable: false),
+    roles: Field::String.with_options(searchable: false)
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -35,6 +36,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
     last_name
     email
     type
+    roles
     encrypted_password
   ].freeze
 
@@ -52,6 +54,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
     created_at
     updated_at
     type
+    roles
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -63,6 +66,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
     first_name
     last_name
     type
+    roles
   ].freeze
 
   # COLLECTION_FILTERS

@@ -140,7 +140,31 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 42rem;
+    width: 55rem;
   }
 }
 
+// Custom Styles
+
+.devise-button {
+  margin: 0 1em 0 1em
+}
+.card-block {
+  color: black;
+  text-align: left;
+  padding: 0 1em 0 1em;
+}
+
+.auth-links a {
+  color: black;
+}
+
+.register-text {
+  text-align: right;
+}
+
+.login > .card {
+  width: 22rem;
+  margin: 0 auto;
+  float: none;
+}

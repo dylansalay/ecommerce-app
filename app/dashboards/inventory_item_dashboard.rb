@@ -13,11 +13,11 @@ class InventoryItemDashboard < Administrate::BaseDashboard
     category: Field::BelongsTo.with_options(searchable: false),
     id: Field::Number.with_options(searchable: false),
     title: Field::String.with_options(searchable: true),
+    subtitle: Field::String.with_options(searchable: true),
     body: Field::Text.with_options(searchable: true),
     unit_cost: Field::String.with_options(searchable: true),
     created_at: Field::DateTime.with_options(searchable: false),
     updated_at: Field::DateTime.with_options(searchable: false),
-    subtitle: Field::String.with_options(searchable: true),
     main_image: Field::Text.with_options(searchable: false),
     thumb_image: Field::Text.with_options(searchable: false),
     slug: Field::String.with_options(searchable: false)
@@ -41,11 +41,11 @@ class InventoryItemDashboard < Administrate::BaseDashboard
     category
     id
     title
+    subtitle
     body
     unit_cost
     created_at
     updated_at
-    subtitle
     main_image
     thumb_image
     slug
@@ -57,9 +57,9 @@ class InventoryItemDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     category
     title
+    subtitle
     body
     unit_cost
-    subtitle
     main_image
     thumb_image
     slug

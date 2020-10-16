@@ -5,6 +5,7 @@ a,
 a:focus,
 a:hover {
   color: #fff;
+  text-decoration: none;
 }
 
 // Custom Default Button
@@ -69,7 +70,7 @@ body {
 }
 
 .nav-masthead .nav-link {
-  padding: .25rem 0;
+  padding: .25rem 1rem;
   font-weight: bold;
   color: rgba(255,255,255,.5);
   background-color: transparent;

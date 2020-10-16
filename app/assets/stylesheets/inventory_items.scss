@@ -1,6 +1,83 @@
-// Place all the styles related to the InventoryItems controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-.top a {
-  color: red;
+@import "bootstrap";
+
+body {
+  min-height: 75rem; /* Can be removed; just added for demo purposes */
+}
+
+
+.inventory-masthead {
+  margin-bottom: 3rem;
+  background-color: #BE8073;
+  -webkit-box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+          box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+/* Nav links */
+
+.navbar-title {
+  font-size: 3em;
+}
+
+.nav-link {
+  float: right;
+  // position: relative;
+  padding: 1rem 3rem 1rem 3rem;
+  font-weight: 500;
+  color: #cdddeb;
+
+  .pull-right {
+    float: right;
+  }
+}
+
+
+.jumbotron {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+.album {
+  min-height: 50rem; /* Can be removed; just added for demo purposes */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #f7f7f7;
+}
+
+.card {
+  float: left;
+  width: 33.333%;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  border: 0;
+}
+
+.card > img {
+  margin-bottom: .75rem;
+}
+
+.card-text {
+  font-size: 85%;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
 }

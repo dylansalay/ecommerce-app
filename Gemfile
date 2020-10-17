@@ -56,10 +56,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Added libraries
 gem 'administrate', '~> 0.14.0'
 gem 'bcrypt', '~> 3.1', '>= 3.1.16'
-gem 'bootstrap', '~> 4.5', '>= 4.5.2'
 gem 'bourbon', '~> 7.0'
 gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'friendly_id', '~> 5.4'
-gem 'jquery-rails'
 gem 'petergate', '~> 2.0', '>= 2.0.1'
 gem 'pry', '~> 0.13.1'

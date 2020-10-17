@@ -1,23 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <%= image_tag @inventory_item.main_image %>
+    </div>
 
+    <div class="col-md-5">
+      <h1><%= @inventory_item.title %></h1>
+      <em>Price: $<%= @inventory_item.unit_cost %></em>
 
-<%= image_tag @inventory_item.main_image %>
+      <hr>
 
-<h1>
-  <%= @inventory_item.title %>
-</h1>
+      <em><%= @inventory_item.subtitle %></em>
 
-<em>
-  <%= @inventory_item.subtitle %>
-</em>
+      <p><%= @inventory_item.body %></p>
 
-<p>
-  <%= @inventory_item.body %>
-</p>
+      <hr>
 
-<p>
-  <%= @inventory_item.unit_cost %>
-</p>
+      <%= link_to 'Back to Inventory', inventory_items_path, class: 'nav-link pull-right' %>
 
-<%= link_to 'Edit |', edit_inventory_item_path(@inventory_item) if logged_in?(:site_admin)  %>
-<%= link_to 'Back', inventory_items_path %>
+    </div>
+  </div>    
+</div>

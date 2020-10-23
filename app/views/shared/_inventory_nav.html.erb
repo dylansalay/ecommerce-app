@@ -1,11 +1,16 @@
 <div class="inventory-masthead">
   <div class="container">
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar">
       <%= link_to "posy", root_path, class: "navbar-title nav-link" %>
-      <%= link_to "About", about_path, class: 'nav-link' %>
-      <%= link_to "Contact", contact_path, class: 'nav-link' %>
-      <%= link_to "Inventory", inventory_items_path, class: 'nav-link' %>
-      <%= login_helper 'nav-link pull-right' %>
+        <%= link_to "Inventory", inventory_items_path, class: 'nav-link' %>
+        <%= link_to "About", about_path, class: 'nav-link' %>
+        <%= link_to "Contact", contact_path, class: 'nav-link' %>
+      <div class="nav-item dropdown-container col-md-4 pull-right">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= auth_dropdown_helper %></a>
+          <div class="dropdown-menu dropdown">
+            <%= login_helper 'dropdown-item nav-link' %>
+          </div>
+      </div>
     </nav>
   </div>
 </div>

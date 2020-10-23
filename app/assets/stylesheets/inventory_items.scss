@@ -5,7 +5,11 @@ body {
 }
 
 .inventory-masthead {
-  margin-bottom: 3rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  margin-bottom: 1rem;
+  border-bottom: .5px solid;
   background-color: #BE8073;
   -webkit-box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
           box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
@@ -13,17 +17,31 @@ body {
 
 /* Nav links */
 
+
 .navbar-title {
+  position: fixed;
   font-size: 3em;
 }
 
 .nav-link {
-  float: right;
-  // position: relative;
-  padding: 1rem 3rem 1rem 3rem;
+  position: relative;
   font-weight: 500;
   color: #cdddeb;
 }
+
+.dropdown-menu {
+  background-color: #BE8073;
+
+  .dropdown-item {
+    text-align: center;
+  }
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    color: #0056b3;
+    background-color: transparent;
+  }
+}
+
 
 
 .jumbotron {

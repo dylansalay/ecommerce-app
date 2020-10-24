@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container inventory-container">
   <div class="row">
     <div class="col-md-7">
-      <%= image_tag @inventory_item.main_image %>
+      <%= image_tag @inventory_item.main_image.url, width: '100%' %>
     </div>
 
     <div class="col-md-5">
@@ -13,11 +13,6 @@
       <em><%= @inventory_item.subtitle %></em>
 
       <p><%= @inventory_item.body %></p>
-
-      <hr>
-
-      <%= link_to 'Back to Inventory', inventory_items_path, class: 'nav-link pull-right' %>
-
     </div>
   </div>    
 </div>

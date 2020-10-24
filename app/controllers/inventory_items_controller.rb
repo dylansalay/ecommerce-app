@@ -62,6 +62,6 @@ class InventoryItemsController < ApplicationController
   end
 
   def inventory_item_params
-    params.require(:inventory_item).permit(:title, :subtitle, :body, :unit_cost, :main_image, :thumb_image)
+    params.require(:inventory_item).permit(:title, :subtitle, :body, :unit_cost, :main_image, :thumb_image, :category_id)
   end
 end

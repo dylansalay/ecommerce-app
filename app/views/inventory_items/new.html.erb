@@ -1,5 +1,8 @@
-<h1>New Inventory Item</h1>
+<div class="container inventory-container">
+  <h1 class='text-center'>Create a new Inventory Item</h1>
 
-<%= render 'form', inventory_item: @inventory_item %>
+  <%= render 'form', inventory_item: @inventory_item %>
+  <%= link_to 'Back', inventory_items_path %>
+</div>
 
-<%= link_to 'Back', inventory_items_path %>
+

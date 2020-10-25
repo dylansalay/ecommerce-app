@@ -1,5 +1,8 @@
 <div class="album text-muted">
   <div class="container">
+    <% if current_user.type=='AdminUser'%>
+      <%= link_to 'Add Item', new_inventory_item_path, class: 'nav-link' %>
+    <% end %>
     <div class="row">
       <%= render partial: 'inventory_item', collection: @inventory_items %>
     </div>

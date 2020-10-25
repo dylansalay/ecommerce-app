@@ -1,7 +1,10 @@
 <div class="container inventory-container">
+  <% if current_user.type=='AdminUser'%>
+    <%= link_to 'Edit Item', edit_inventory_item_path(@inventory_item), class: 'nav-link' %>
+  <% end %>
   <div class="row">
     <div class="col-md-7">
-      <%= image_tag @inventory_item.main_image.url, width: '100%' %>
+      <%= image_tag inventory_img(@inventory_item.main_image.url, 'main'), width: '100%' %>
     </div>
 
     <div class="col-md-5">

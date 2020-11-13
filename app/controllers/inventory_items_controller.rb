@@ -6,7 +6,7 @@ class InventoryItemsController < ApplicationController
   layout 'inventory_item'
 
   def index
-    @inventory_items = InventoryItem.all
+    @inventory_items = InventoryItem.page(params[:page]).per(6)
     @page_title = 'Inventory Items'
   end
 

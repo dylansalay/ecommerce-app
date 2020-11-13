@@ -4,7 +4,12 @@
       <%= link_to 'Add Item', new_inventory_item_path, class: 'nav-link' %>
     <% end %>
     <div class="row">
-      <%= render partial: 'inventory_item', collection: @inventory_items %>
+      <div>
+        <%= render partial: 'inventory_item', collection: @inventory_items %>
+      </div>
+      <div class='pag-container'>
+        <%= paginate @inventory_items%>
+      </div>
     </div>
   </div>
 </div>

@@ -344,6 +344,7 @@ DEPENDENCIES
   faker (~> 2.14)
   friendly_id (~> 5.4)
   jbuilder (~> 2.7)
+  kaminari (~> 1.2, >= 1.2.1)
   listen (~> 3.2)
   mini_magick (~> 4.10, >= 4.10.1)
   petergate (~> 2.0, >= 2.0.1)

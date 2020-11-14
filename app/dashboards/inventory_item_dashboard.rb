@@ -79,7 +79,7 @@ class InventoryItemDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how inventory items are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(inventory_item)
-  #   "InventoryItem ##{inventory_item.id}"
-  # end
+  def display_resource(inventory_item)
+    inventory_item.title
+  end
 end

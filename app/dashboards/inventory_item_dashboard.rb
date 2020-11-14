@@ -18,8 +18,8 @@ class InventoryItemDashboard < Administrate::BaseDashboard
     unit_cost: Field::String.with_options(searchable: true),
     created_at: Field::DateTime.with_options(searchable: false),
     updated_at: Field::DateTime.with_options(searchable: false),
-    main_image: Field::Text.with_options(searchable: false),
-    thumb_image: Field::Text.with_options(searchable: false),
+    main_image: Field::Carrierwave.with_options(searchable: false),
+    thumb_image: Field::Carrierwave.with_options(searchable: false),
     slug: Field::String.with_options(searchable: false)
   }.freeze
 
@@ -62,7 +62,6 @@ class InventoryItemDashboard < Administrate::BaseDashboard
     unit_cost
     main_image
     thumb_image
-    slug
   ].freeze
 
   # COLLECTION_FILTERS

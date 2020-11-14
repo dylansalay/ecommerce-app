@@ -55,6 +55,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Added libraries
 gem 'administrate', '~> 0.14.0'
+gem 'administrate-field-carrierwave', '~> 0.5.0'
 gem 'bcrypt', '~> 3.1', '>= 3.1.16'
 gem 'bourbon', '~> 7.0'
 gem 'carrierwave', '~> 2.1'

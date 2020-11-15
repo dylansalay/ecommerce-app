@@ -18,7 +18,7 @@ class InventoryItemDashboard < Administrate::BaseDashboard
     unit_cost: Field::String.with_options(searchable: true),
     created_at: Field::DateTime.with_options(searchable: false),
     updated_at: Field::DateTime.with_options(searchable: false),
-    main_image: Field::Carrierwave.with_options(searchable: false),
+    images: Field::Carrierwave.with_options(searchable: false, multiple: true),
     thumb_image: Field::Carrierwave.with_options(searchable: false),
     slug: Field::String.with_options(searchable: false)
   }.freeze
@@ -31,6 +31,7 @@ class InventoryItemDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     category
     id
+    images
     title
     body
   ].freeze
@@ -46,7 +47,7 @@ class InventoryItemDashboard < Administrate::BaseDashboard
     unit_cost
     created_at
     updated_at
-    main_image
+    images
     thumb_image
     slug
   ].freeze
@@ -60,9 +61,13 @@ class InventoryItemDashboard < Administrate::BaseDashboard
     subtitle
     body
     unit_cost
-    main_image
+    images
     thumb_image
   ].freeze
+
+  def permitted_attributes
+    super - [:images] + [{ images: [] }]
+  end
 
   # COLLECTION_FILTERS
   # a hash that defines filters that can be used while searching via the search

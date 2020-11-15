@@ -17,13 +17,5 @@ RSpec.describe InventoryItem, type: :model do
       @inventory_item.body = nil
       expect(@inventory_item).to_not be_valid
     end
-
-    it 'sets default values for main_image and thumb_image' do
-      @inventory_item.main_image = nil
-      @inventory_item.thumb_image = nil
-      @inventory_item.reload
-      expect(@inventory_item.main_image).to eq(Placeholder.image_generator(height: '600', width: '400'))
-      expect(@inventory_item.thumb_image).to eq(Placeholder.image_generator(height: '350', width: '200'))
-    end
   end
 end

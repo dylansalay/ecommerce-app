@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_201_003_001_413) do
+ActiveRecord::Schema.define(version: 20_201_115_180_154) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20_201_003_001_413) do
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
     t.string 'subtitle'
-    t.text 'main_image'
+    t.text 'images', default: [], array: true
     t.text 'thumb_image'
     t.string 'slug'
     t.bigint 'category_id'

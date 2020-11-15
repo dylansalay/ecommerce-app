@@ -17,6 +17,6 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   def name
-    "#{self.first_name + " " + self.last_name}"
+    (first_name + ' ' + last_name).to_s
   end
 end

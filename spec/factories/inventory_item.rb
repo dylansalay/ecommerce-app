@@ -14,8 +14,8 @@ FactoryBot.define do
     body { Faker::Lorem.sentence }
     unit_cost { Faker::Commerce.price }
     subtitle { generate :subtitle }
-    main_image { Placeholder.image_generator(height: '600', width: '400') }
-    thumb_image { Placeholder.image_generator(height: '350', width: '200') }
+    images { ['/assets/images/poppy_image_1', '/assets/images/poppy_image_2'] }
+    thumb_image { '/assets/images/poppy_thumb' }
     category { FactoryBot.create(:category) }
   end
 end

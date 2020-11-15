@@ -10,5 +10,5 @@ class InventoryItem < ApplicationRecord
   validates :body, presence: true
 
   mount_uploader :thumb_image, ItemUploader
-  mount_uploader :main_image, ItemUploader
+  mount_uploaders :images, ItemUploader
 end

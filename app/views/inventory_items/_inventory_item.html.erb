@@ -1,6 +1,6 @@
 <div class="card">
   <p><%= link_to inventory_item.title, inventory_item_path(inventory_item) %></p>
-  <%= image_tag inventory_img(inventory_item.thumb_image.url, 'thumb') %>
+  <%= image_tag inventory_img(inventory_item.thumb_image.url, 'thumb'), class: 'thumb-image' %>
   <p class="card-text">
     <%= inventory_item.subtitle %>
     <span><%= inventory_item.unit_cost %> </span>

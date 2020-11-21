@@ -46,6 +46,47 @@ body {
   margin: auto;
 }
 
+.scroller {
+  background-color: transparent;
+  width:  600px;
+  height: 400px;
+  text-align: center;
+  margin: 0 auto;
+  float: none;
+
+  .slick-prev, .slick-next {
+    z-index: 100;
+    position: absolute;
+  }
+
+  .slick-prev {
+    rotate: -90deg;
+    font-size: 30px;
+    left: 5px;
+  }
+  
+  .slick-next {
+    rotate: -90deg;
+    font-size: 30px;
+    right: -14px;
+  }
+
+  .show-image {
+    padding: 30px;
+    width: auto;
+    height: 400px;
+    min-width: 0px;
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+}
+
+.thumb-image {
+  width:  350px;
+  height: 200px;
+  object-fit: cover;
+}
 
 
 .jumbotron {

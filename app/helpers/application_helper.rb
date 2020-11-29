@@ -12,6 +12,6 @@ module ApplicationHelper
   end
 
   def copyright_generator
-    @copyright = CopyrightGeneratorConcern::Renderer.copyright 'Dylan Salay', 'All rights reserved'
+    @copyright = CopyrightGeneratorConcern::Renderer.copyright 'Haley Knox', 'All rights reserved'
   end
 end

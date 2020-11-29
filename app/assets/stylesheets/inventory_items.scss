@@ -54,21 +54,29 @@ body {
   margin: 0 auto;
   float: none;
 
+  .slick-list {
+    margin: 0 auto;
+    width: 90%;
+
+    .show-item {
+      margin: auto;
+    }
+
+  }
+
   .slick-prev, .slick-next {
     z-index: 100;
     position: absolute;
   }
 
   .slick-prev {
-    rotate: -90deg;
     font-size: 30px;
-    left: 5px;
+    left: 10px;
   }
   
   .slick-next {
-    rotate: -90deg;
     font-size: 30px;
-    right: -14px;
+    right: -23px;
   }
 
   .show-image {

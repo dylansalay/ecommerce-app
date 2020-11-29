@@ -10,10 +10,10 @@ class InventoryItemDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    category: Field::BelongsTo.with_options(searchable: false),
-    id: Field::Number.with_options(searchable: false),
     title: Field::String.with_options(searchable: true),
+    id: Field::Number.with_options(searchable: false),
     subtitle: Field::String.with_options(searchable: true),
+    category: Field::BelongsTo.with_options(searchable: false),
     body: Field::Text.with_options(searchable: true),
     unit_cost: Field::String.with_options(searchable: true),
     created_at: Field::DateTime.with_options(searchable: false),
@@ -39,10 +39,10 @@ class InventoryItemDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    category
-    id
     title
+    id
     subtitle
+    category
     body
     unit_cost
     created_at

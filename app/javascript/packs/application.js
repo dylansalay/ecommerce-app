@@ -32,6 +32,5 @@ document.addEventListener("turbolinks:load", function() {
     autoplaySpeed: 5000,
     useTransform: true,
     cssEase: 'ease-out',
-    vertical: true
   })
 })

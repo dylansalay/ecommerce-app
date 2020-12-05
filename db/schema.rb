@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_201_115_180_154) do
+ActiveRecord::Schema.define(version: 20_201_205_001_333) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -48,6 +48,25 @@ ActiveRecord::Schema.define(version: 20_201_115_180_154) do
     t.index ['slug'], name: 'index_inventory_items_on_slug', unique: true
   end
 
+  create_table 'shopping_cart_items', force: :cascade do |t|
+    t.bigint 'inventory_item_id', null: false
+    t.bigint 'shopping_cart_id', null: false
+    t.integer 'quantity', default: 0, null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['inventory_item_id'], name: 'index_shopping_cart_items_on_inventory_item_id'
+    t.index ['shopping_cart_id'], name: 'index_shopping_cart_items_on_shopping_cart_id'
+  end
+
+  create_table 'shopping_carts', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'purchased_at'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.bigint 'user_id'
+    t.index ['user_id'], name: 'index_shopping_carts_on_user_id'
+  end
+
   create_table 'users', force: :cascade do |t|
     t.string 'email', default: '', null: false
     t.string 'encrypted_password', default: '', null: false
@@ -65,4 +84,5 @@ ActiveRecord::Schema.define(version: 20_201_115_180_154) do
   end
 
   add_foreign_key 'inventory_items', 'categories'
+  add_foreign_key 'shopping_carts', 'users'
 end

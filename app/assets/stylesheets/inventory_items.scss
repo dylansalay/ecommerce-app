@@ -129,14 +129,19 @@ body {
   padding: .75rem;
   margin-bottom: 2rem;
   border: 0;
+
+  .item-cost {
+    float: right;
+    padding-right: 5px;
+  }
+
+  em {
+    margin-bottom: 10px;
+  }
 }
 
 .card > img {
   margin-bottom: .75rem;
-}
-
-.card-text {
-  font-size: 85%;
 }
 
 footer {

@@ -5,6 +5,7 @@ class InventoryItem < ApplicationRecord
   friendly_id :title, use: :slugged
 
   belongs_to :category
+  belongs_to :shopping_cart
 
   validates :title, presence: true
   validates :body, presence: true

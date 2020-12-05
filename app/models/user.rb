@@ -15,6 +15,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :first_name, presence: true
   validates :last_name, presence: true
+  has_many :shopping_carts
 
   def name
     (first_name + ' ' + last_name).to_s

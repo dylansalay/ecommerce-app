@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class ShoppingCart < ApplicationRecord
-  has_many :cart_items, class_name: "ShoppingCartItem", foreign_key: :shopping_cart_id
-  has_many :inventory_items, through: :items, class_name: "InventoryItem"
+  has_many :cart_items, class_name: 'ShoppingCartItem', foreign_key: :shopping_cart_id
+  has_many :inventory_items, through: :items, class_name: 'InventoryItem'
   belongs_to :user
 
   validates_presence_of :user
@@ -12,7 +12,7 @@ class ShoppingCart < ApplicationRecord
     if existing_item.present?
       prev_quantity = existing_item.quantity
       existing_item.update(quantity: (prev_quantity + quantity.to_i))
-      self.save
+      save
     else
       new_item(item, quantity)
     end
@@ -23,9 +23,9 @@ class ShoppingCart < ApplicationRecord
       ShoppingCartItem.create!(
         shopping_cart: self,
         inventory_item: item,
-        quantity: quantity,
+        quantity: quantity
       )
-      self.save!
+      save!
     end
   end
 end

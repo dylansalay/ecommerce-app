@@ -7,7 +7,7 @@ class ShoppingCartItemsController < ApplicationController
   def create
     @shopping_cart.add_item_to_cart(@inventory_item, 1)
 
-    redirect_to inventory_item_path(@inventory_item), notice: "The item was added to your cart"
+    redirect_to inventory_item_path(@inventory_item), notice: 'The item was added to your cart'
   end
 
   private

@@ -3,7 +3,6 @@
 class ShoppingCartsController < ApplicationController
   before_action :load_shopping_cart, only: %i[index]
 
-
   private
 
   def load_shopping_cart

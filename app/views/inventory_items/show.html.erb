@@ -11,7 +11,8 @@
       </div>
     </div>
 
-    <div class="col-md-5">
+    <div class="col-md-5 item-details">
+      <span class="pull-right"><%= link_to 'Add to Cart', shopping_cart_items_path(@inventory_item), method: :post %> </span>
       <h1><%= @inventory_item.title %></h1>
       <em>Price: $<%= @inventory_item.unit_cost %></em>
 

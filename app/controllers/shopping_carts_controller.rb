@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-class InventoryItemsController < ApplicationController
+class ShoppingCartsController < ApplicationController
   before_action :load_shopping_cart, only: %i[index]
-
 
   private
 

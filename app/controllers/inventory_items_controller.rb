@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class InventoryItemsController < ApplicationController
-  before_action :set_inventory_item, only: %i[show edit update destroy]
+  before_action :load_inventory_item, only: %i[show edit update destroy]
+  before_action :load_shopping_cart, only: %i[index show]
   access all: %i[show index], user: { except: %i[destroy new create update edit] }, site_admin: :all
   layout 'inventory_item'
 
@@ -57,8 +58,14 @@ class InventoryItemsController < ApplicationController
 
   private
 
-  def set_inventory_item
+  def load_inventory_item
     @inventory_item = InventoryItem.friendly.find(params[:id])
+  end
+
+  def load_shopping_cart
+    @shopping_cart = current_user.shopping_carts.where(purchased_at: nil).last
+    @shopping_cart = current_user.shopping_carts.create if @shopping_cart.blank?
+    @shopping_cart
   end
 
   def inventory_item_params

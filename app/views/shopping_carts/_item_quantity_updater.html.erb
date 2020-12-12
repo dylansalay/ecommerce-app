@@ -1,0 +1,4 @@
+<%= form_for cart_item, :url => { controller: 'shopping_cart_items', action: 'update', id: cart_item.inventory_item_id }, html: { method: :put } do %>
+  <%= select_tag :quantity, options_for_select((0...16), cart_item.quantity), :value => params[:quantity] %>
+  <%= button_tag "Update", class: "btn-primary rounded"%>
+<% end %> 

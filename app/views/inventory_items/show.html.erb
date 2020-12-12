@@ -1,4 +1,4 @@
-<div class="container inventory-container">
+<div class="container inventory-container text-muted">
   <% if current_user.type=='AdminUser'%>
     <%= link_to 'Edit Item', edit_inventory_item_path(@inventory_item), class: 'nav-link' %>
   <% end %>
@@ -16,8 +16,8 @@
       <em>Price: $<%= @inventory_item.unit_cost %></em>
       <div class="mt-3">
         <%= form_for @inventory_item, :url => { controller: 'shopping_cart_items', action: 'create', id: @inventory_item.id }, html: { method: :post } do %>
-          <%= select_tag :quantity, options_for_select(1...16), :value => params[:quantity], prompt: "Select Quantity" %>
-          <%= button_tag "Add to Cart", class: "btn-primary"%>
+          <%= select_tag :quantity, options_for_select(0...16), :value => params[:quantity], prompt: "Select Quantity" %>
+          <%= button_tag "Add to Cart", class: "btn-primary rounded"%>
         <% end %>     
       </div>
 
@@ -27,5 +27,6 @@
 
       <p><%= @inventory_item.body %></p>
     </div>
-  </div>    
+  </div> 
+  <div class="push">   
 </div>

@@ -2,7 +2,7 @@
 
 class ShoppingCart < ApplicationRecord
   has_many :cart_items, class_name: 'ShoppingCartItem', foreign_key: :shopping_cart_id
-  has_many :inventory_items, through: :items, class_name: 'InventoryItem'
+  has_many :inventory_items, through: :cart_items, class_name: 'InventoryItem'
   belongs_to :user
 
   validates_presence_of :user
@@ -23,6 +23,7 @@ class ShoppingCart < ApplicationRecord
       ShoppingCartItem.create!(
         shopping_cart: self,
         inventory_item: item,
+        title: item.title,
         quantity: quantity
       )
       save!

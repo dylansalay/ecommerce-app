@@ -5,7 +5,7 @@ class ShoppingCartItemsController < ApplicationController
   before_action :load_shopping_cart, only: %i[create]
 
   def create
-    @shopping_cart.add_item_to_cart(@inventory_item, 1)
+    @shopping_cart.add_item_to_cart(@inventory_item, params[:quantity])
 
     redirect_to inventory_item_path(@inventory_item), notice: 'The item was added to your cart'
   end
@@ -17,7 +17,7 @@ class ShoppingCartItemsController < ApplicationController
   end
 
   def load_inventory_item
-    @inventory_item = InventoryItem.friendly.find(params[:format])
+    @inventory_item = InventoryItem.friendly.find(params[:id])
   end
 
   def load_shopping_cart

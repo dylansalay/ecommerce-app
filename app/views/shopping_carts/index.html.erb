@@ -1,14 +1,16 @@
 <div class="container inventory-container text-muted">
-  <div class="col-md-8">
+  <div class="col-md-9">
     <div class="row">
       <div class="col-md-12 table-responsive">
         <div class="table table-condensed mb-0">
           <table>
             <thead>
               <tr>
+                <th> </th>
                 <th> Title </th>
                 <th> Price </th>
                 <th> Quantity </th>
+                <th> </th>
               </tr>
             <%= render partial: 'cart_item', collection: @cart_items %>
           </table>

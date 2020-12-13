@@ -39,4 +39,14 @@ class ShoppingCart < ApplicationRecord
     end
     self.save!
   end
+
+  def remove_from_cart(item)
+    self.cart_items.each  do |i|
+      next unless i.id == item.id
+      i.destroy
+      item.destroy
+      self.reload
+    end
+    self.save!
+  end
 end

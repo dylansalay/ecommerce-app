@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :categories
     resources :inventory_items
     resources :admin_users
+    resources :shopping_carts
+    resources :shopping_cart_items
 
     root to: 'users#index'
   end

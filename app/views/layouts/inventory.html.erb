@@ -9,14 +9,12 @@
 
     <meta name="keywords" content="<%= @seo_keywords %>" />
 
-    <%= stylesheet_link_tag 'inventory_items', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'inventory', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%= render 'shared/inventory_nav' %>
-
-    <%= render 'shared/inventory_masthead' %>
 
     <%= yield %>
 

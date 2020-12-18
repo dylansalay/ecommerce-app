@@ -2,6 +2,12 @@
 
 class ShoppingCartsController < ApplicationController
   before_action :load_shopping_cart, only: %i[index]
+  layout 'inventory'
+
+  def index
+    @cart_items = @shopping_cart.cart_items
+
+  end
 
   private
 

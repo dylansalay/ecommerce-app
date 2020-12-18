@@ -4,7 +4,7 @@ class InventoryItemsController < ApplicationController
   before_action :load_inventory_item, only: %i[show edit update destroy]
   before_action :load_shopping_cart, only: %i[index show]
   access all: %i[show index], user: { except: %i[destroy new create update edit] }, site_admin: :all
-  layout 'inventory_item'
+  layout 'inventory'
 
   def index
     @inventory_items = InventoryItem.page(params[:page]).per(6)

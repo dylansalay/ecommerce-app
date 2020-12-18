@@ -1,9 +1,5 @@
 @import "bootstrap/scss/bootstrap";
 
-body {
-  min-height: 75rem; /* Can be removed; just added for demo purposes */
-}
-
 .inventory-masthead {
   position: fixed;
   width: 100%;
@@ -96,6 +92,11 @@ body {
   object-fit: cover;
 }
 
+.cart-image {
+  width: 200px;
+  height: 115px;
+}
+
 
 .jumbotron {
   padding-top: 6rem;
@@ -145,8 +146,17 @@ body {
 }
 
 footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  .container {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }
 
 footer p {
@@ -154,7 +164,7 @@ footer p {
 }
 
 .inventory-container {
-  padding-top: 30px;
+  padding-top: 10em;
 }
 
 .item-details {
@@ -165,4 +175,14 @@ footer p {
 
 .item-card {
   height: 25em;
+}
+
+.push {
+  height: 3em
+}
+
+.table td, .table th {
+  text-align: center;
+  vertical-align: middle;
+  padding: .75rem 2rem;
 }

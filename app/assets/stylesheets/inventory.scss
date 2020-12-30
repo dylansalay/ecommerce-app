@@ -3,7 +3,7 @@
 .inventory-masthead {
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 9999;
   margin-bottom: 1rem;
   border-bottom: .5px solid;
   background-color: #BE8073;
@@ -22,7 +22,7 @@
 .nav-link {
   position: relative;
   font-weight: 500;
-  color: #cdddeb;
+  color: #fff;
 }
 
 .dropdown-menu {

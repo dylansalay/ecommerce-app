@@ -2,11 +2,13 @@
   <div class="container">
     <nav class="navbar">
       <%= link_to "posy", root_path, class: "navbar-title nav-link" %>
-        <%= link_to "About", about_path, class: 'nav-link' %>
-        <%= link_to "Contact", contact_path, class: 'nav-link' %>
-        <%= link_to "Inventory", inventory_items_path, class: 'nav-link' %>
-        <%= link_to "Shopping Cart", shopping_carts_path, class: 'nav-link' %>
-      <div class="nav-item dropdown-container col-md-4 pull-right">
+      <%= link_to "About", about_path, class: 'nav-link' %>
+      <%= link_to "Contact", contact_path, class: 'nav-link' %>
+      <%= link_to "Inventory", inventory_items_path, class: 'nav-link' %>
+      <%= link_to shopping_carts_path, class: 'nav-link' do %>
+          <i class="fas fa-cart-plus"></i>
+      <% end %>
+      <div class="nav-item dropdown-container col-md-2">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= auth_dropdown_helper %></a>
           <div class="dropdown-menu dropdown">
             <%= login_helper 'dropdown-item nav-link' %>

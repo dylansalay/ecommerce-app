@@ -1,11 +1,16 @@
 <div class="masthead clearfix">
-  <div class="inner">
-    <h3> <%= link_to "posy", root_path, class: "masthead-brand"%></h3>
+  <div class="container navbar">
+    <%= link_to "posy", root_path, class: "masthead-brand nav-link pull-right"%>
     <nav class="nav nav-masthead">
       <%= link_to "About Me", about_path, class: 'nav-link' %>
       <%= link_to "Contact", contact_path, class: 'nav-link' %>
       <%= link_to "Inventory", inventory_items_path, class: 'nav-link' %>
-      <%= login_helper('nav-link') %>
+      <div class="nav-item dropdown-container col-md-2">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= auth_dropdown_helper %></a>
+          <div class="dropdown-menu dropdown">
+            <%= login_helper 'dropdown-item nav-link' %>
+          </div>
+      </div>
     </nav>
   </div>
 </div>

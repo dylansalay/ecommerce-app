@@ -12,7 +12,7 @@ class ShoppingCart < ApplicationRecord
     if existing_item.present?
       prev_quantity = existing_item.quantity
       existing_item.update(quantity: (prev_quantity + quantity.to_i))
-      self.save!
+      save!
     else
       new_item(item, quantity)
     end
@@ -37,21 +37,22 @@ class ShoppingCart < ApplicationRecord
     else
       i.update(quantity: quantity)
     end
-    self.save!
+    save!
   end
 
   def remove_from_cart(item)
-    self.cart_items.each  do |i|
+    cart_items.each  do |i|
       next unless i.id == item.id
+
       i.destroy
       item.destroy
-      self.reload
+      reload
     end
-    self.save!
+    save!
   end
 
   def cart_subtotal
-    self.cart_items.reduce(0) { |sum, item| sum +(item.quantity * item.inventory_item.unit_cost) }
+    cart_items.reduce(0) { |sum, item| sum + (item.quantity * item.inventory_item.unit_cost) }
   end
 
   def cart_shipping
@@ -59,6 +60,6 @@ class ShoppingCart < ApplicationRecord
   end
 
   def cart_total
-    self.cart_shipping + self.cart_subtotal
+    cart_shipping + cart_subtotal
   end
 end

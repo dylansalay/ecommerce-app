@@ -6,7 +6,6 @@ class ShoppingCartsController < ApplicationController
 
   def index
     @cart_items = @shopping_cart.cart_items
-
   end
 
   private

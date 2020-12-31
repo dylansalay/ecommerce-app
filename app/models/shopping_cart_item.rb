@@ -8,6 +8,6 @@ class ShoppingCartItem < ApplicationRecord
   validates :quantity, numericality: { greater_than: 0 }
 
   def total_cost
-    self.inventory_item.unit_cost * self.quantity
+    inventory_item.unit_cost * quantity
   end
 end

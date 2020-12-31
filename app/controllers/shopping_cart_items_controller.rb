@@ -14,14 +14,14 @@ class ShoppingCartItemsController < ApplicationController
   def update
     @shopping_cart.update_quantity(@inventory_item, params[:quantity])
 
-    redirect_to shopping_carts_path, notice: "The item quantity has been updated"
+    redirect_to shopping_carts_path, notice: 'The item quantity has been updated'
   end
 
   def destroy
     @shopping_cart.remove_from_cart(@cart_item)
-    @cart_item.destroy if @cart_item["quantity"].zero?
+    @cart_item.destroy if @cart_item['quantity'].zero?
 
-    redirect_to shopping_carts_path, notice: "The item was removed from your cart"
+    redirect_to shopping_carts_path, notice: 'The item was removed from your cart'
   end
 
   private

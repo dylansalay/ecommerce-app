@@ -5,13 +5,19 @@
       <%= link_to "About", about_path, class: 'nav-link' %>
       <%= link_to "Contact", contact_path, class: 'nav-link' %>
       <%= link_to "Inventory", inventory_items_path, class: 'nav-link' %>
-      <%= link_to shopping_carts_path, class: 'nav-link' do %>
-          <i class="fas fa-cart-plus"></i>
-      <% end %>
-      <div class="nav-item dropdown-container col-md-2">
+        <div class="nav-item dropdown-container col-md-1">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
+            <i class="fas fa-cart-plus"></i>
+              <span class="badge count ">
+          </a>
+          <div class="dropdown-menu dropdown">
+            <%= render partial: 'shopping_carts/shopping_cart_summary', locals: { shopping_cart: load_shopping_cart } %>
+          </div>
+      </div>
+      <div class="nav-item dropdown-container col-md-1">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= auth_dropdown_helper %></a>
           <div class="dropdown-menu dropdown">
-            <%= login_helper 'dropdown-item nav-link' %>
+            <%= login_helper 'dropdown-item ml-0 nav-link' %>
           </div>
       </div>
     </nav>

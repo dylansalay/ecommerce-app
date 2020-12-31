@@ -7,6 +7,7 @@
   margin-bottom: 1rem;
   border-bottom: .5px solid;
   background-color: #BE8073;
+  font-family: 'Playfair Display', serif;
   -webkit-box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
           box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
 }
@@ -97,6 +98,14 @@
   height: 115px;
 }
 
+.cart-card {
+  width: 300px;
+
+  .title {
+    color: #fff;
+  }
+}
+
 
 .jumbotron {
   padding-top: 6rem;
@@ -124,23 +133,6 @@
   background-color: #f7f7f7;
 }
 
-.card {
-  float: left;
-  width: 33.333%;
-  padding: .75rem;
-  margin-bottom: 2rem;
-  border: 0;
-
-  .item-cost {
-    float: right;
-    padding-right: 5px;
-  }
-
-  em {
-    margin-bottom: 10px;
-  }
-}
-
 .card > img {
   margin-bottom: .75rem;
 }
@@ -165,6 +157,7 @@ footer p {
 
 .inventory-container {
   padding-top: 10em;
+
 }
 
 .item-details {
@@ -172,10 +165,28 @@ footer p {
     float: right;
   }
 }
+.card-header .small {
+  vertical-align: middle;
+}
 
 .item-card {
   height: 25em;
+  float: left;
+  width: 33.333%;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  border: 0;
+
+  .item-cost {
+    float: right;
+    padding-right: 5px;
+  }
+
+  em {
+    margin-bottom: 10px;
+  }
 }
+
 
 .push {
   height: 3em

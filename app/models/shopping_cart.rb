@@ -49,4 +49,16 @@ class ShoppingCart < ApplicationRecord
     end
     self.save!
   end
+
+  def cart_subtotal
+    self.cart_items.reduce(0) { |sum, item| sum +(item.quantity * item.inventory_item.unit_cost) }
+  end
+
+  def cart_shipping
+    0
+  end
+
+  def cart_total
+    self.cart_shipping + self.cart_subtotal
+  end
 end

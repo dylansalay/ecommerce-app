@@ -6,4 +6,8 @@ class ShoppingCartItem < ApplicationRecord
 
   validates :inventory_item, :shopping_cart, :quantity, presence: true
   validates :quantity, numericality: { greater_than: 0 }
+
+  def total_cost
+    self.inventory_item.unit_cost * self.quantity
+  end
 end

@@ -2,13 +2,13 @@
   <div class="container">
     <nav class="navbar">
       <%= link_to "posy", root_path, class: "navbar-title nav-link" %>
-      <%= link_to "About", about_path, class: 'nav-link' %>
-      <%= link_to "Contact", contact_path, class: 'nav-link' %>
-      <%= link_to "Inventory", inventory_items_path, class: 'nav-link' %>
+      <%= link_to "about", about_path, class: 'nav-link' %>
+      <%= link_to "contact", contact_path, class: 'nav-link' %>
+      <%= link_to "inventory", inventory_items_path, class: 'nav-link' %>
         <div class="nav-item dropdown-container col-md-1">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
             <i class="fas fa-cart-plus"></i>
-              <span class="badge count ">
+              <span class="badge <%= 'active' unless load_shopping_cart.cart_items.count.zero? %> "> <%= inventory_badge_helper %> </span>
           </a>
           <div class="dropdown-menu dropdown">
             <%= render partial: 'shopping_carts/shopping_cart_summary', locals: { shopping_cart: load_shopping_cart } %>

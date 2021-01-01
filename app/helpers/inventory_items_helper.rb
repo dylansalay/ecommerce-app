@@ -18,4 +18,8 @@ module InventoryItemsHelper
       image_generator(height: '600', width: '400')
     end
   end
+
+  def inventory_badge_helper
+    load_shopping_cart.cart_quantity unless load_shopping_cart.cart_quantity.zero?
+  end
 end

@@ -20,8 +20,6 @@ module InventoryItemsHelper
   end
 
   def inventory_badge_helper
-    unless load_shopping_cart.cart_quantity.zero?
-      load_shopping_cart.cart_quantity
-    end
+    load_shopping_cart.cart_quantity unless load_shopping_cart.cart_quantity.zero?
   end
 end

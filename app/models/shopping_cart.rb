@@ -52,7 +52,7 @@ class ShoppingCart < ApplicationRecord
   end
 
   def cart_quantity
-    self.cart_items.reduce(0) { |sum, item| sum + (item.quantity) }
+    cart_items.reduce(0) { |sum, item| sum + item.quantity }
   end
 
   def cart_subtotal

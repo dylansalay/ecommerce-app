@@ -24,6 +24,17 @@
   position: relative;
   font-weight: 500;
   color: #fff;
+
+  .active {
+    background-color: #dc3545;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    font-size: .6em;
+    vertical-align:middle;
+    margin-left:-10px;
+    margin-bottom: -20px;
+  }
 }
 
 .dropdown-menu {

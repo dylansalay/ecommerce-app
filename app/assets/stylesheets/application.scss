@@ -22,10 +22,9 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
 }
 body {
-  color: #fff;
+  color: #BE8073;
   text-align: center;
   text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
   font-family: 'Playfair Display', serif;
@@ -62,7 +61,7 @@ body {
   width: 100%;
   z-index: 9999;
   margin-bottom: 1rem;
-  border-bottom: .5px solid;
+  border-bottom: .5px solid black;
   background-color: #BE8073;
   font-family: 'Playfair Display', serif;
   -webkit-box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
@@ -214,4 +213,20 @@ body {
 
 .footer-container {
   padding-top: 10rem;
+}
+
+#background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: image-url('background_image.jpg') repeat-x;
+  background-size: contain;
+  background-position: center;
 }

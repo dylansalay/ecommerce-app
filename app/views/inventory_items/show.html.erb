@@ -1,5 +1,5 @@
 <div class="container inventory-container text-muted">
-  <% if current_user.type=='AdminUser'%>
+  <% if current_or_guest_user.type=='AdminUser'%>
     <%= link_to 'Edit Item', edit_inventory_item_path(@inventory_item), class: 'nav-link' %>
   <% end %>
   <div class="row">

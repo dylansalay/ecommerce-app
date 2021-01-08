@@ -2,7 +2,7 @@
 
 module InventoryItemsHelper
   def auth_dropdown_helper
-    user_signed_in? ? current_user.name : 'Sign Up'
+    user_signed_in? ? current_or_guest_user.name : 'Sign Up'
   end
 
   def image_generator(height:, width:)

@@ -11,6 +11,12 @@ module ApplicationHelper
     end
   end
 
+  def admin_link_helper
+    if current_or_guest_user.roles.include?(:site_admin)
+      (link_to 'Admin Dashboard', admin_root_path, class: 'btn btn-primary')
+    end
+  end
+
   def copyright_generator
     @copyright = CopyrightGeneratorConcern::Renderer.copyright 'Haley Knox', 'All rights reserved'
   end

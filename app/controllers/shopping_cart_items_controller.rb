@@ -35,6 +35,6 @@ class ShoppingCartItemsController < ApplicationController
   end
 
   def load_shopping_cart
-    @shopping_cart = current_user.shopping_carts.last
+    @shopping_cart = current_or_guest_user.shopping_carts.last
   end
 end

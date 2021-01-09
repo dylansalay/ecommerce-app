@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ShoppingCart < ApplicationRecord
-  has_many :cart_items, class_name: 'ShoppingCartItem', foreign_key: :shopping_cart_id
+  has_many :cart_items, class_name: 'ShoppingCartItem', foreign_key: :shopping_cart_id, dependent: :destroy
   has_many :inventory_items, through: :cart_items, class_name: 'InventoryItem'
   belongs_to :user
 

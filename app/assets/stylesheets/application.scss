@@ -152,7 +152,7 @@ body {
 
 // Footer
 .mastfoot {
-  color: rgba(255,255,255,.5);
+  color: black;
 }
 
 // Affix and Center
@@ -229,4 +229,24 @@ body {
   background: image-url('background_image.jpg') repeat-x;
   background-size: contain;
   background-position: center;
+}
+
+
+.app-card-container {
+  color: black;
+  text-align: left;
+  width: 55%;
+  margin: auto;
+}
+
+.app-card-container > .card {
+  padding: 40px;
+}
+
+.profile-img {
+  border: 1px solid grey;
+}
+
+.app-card-container a {
+  color: blue;
 }

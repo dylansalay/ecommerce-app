@@ -138,7 +138,7 @@
 }
 
 .album {
-  min-height: 50rem; /* Can be removed; just added for demo purposes */
+  min-height: 45rem; /* Can be removed; just added for demo purposes */
   padding-top: 3rem;
   padding-bottom: 3rem;
   background-color: #f7f7f7;
@@ -167,9 +167,29 @@ footer p {
 }
 
 .inventory-container {
-  padding-top: 10em;
+  padding-top: 7em;
+  margin: 0 auto 0 auto;
 
+  table {
+    margin: 0 auto 1em auto;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .inventory-totals {
+    display: block;
+    clear: right;
+    padding: 3px;
+  }
 }
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
 
 .item-details {
   a {

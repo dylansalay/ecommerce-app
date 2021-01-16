@@ -1,8 +1,9 @@
-<div class="container inventory-container text-muted">
+<div class="container album text-muted">
   <div class="row">
-    <div class="col-md-9">
+    <div class="inventory-container">
       <div class="col-md-12 table-responsive">
-        <div class="table table-condensed mb-0">
+        <h3> Shopping Cart </h3>
+        <div class="table table-condensed">
           <table>
             <thead>
               <tr>
@@ -12,8 +13,20 @@
                 <th> Quantity </th>
                 <th> </th>
               </tr>
+            </thead>
             <%= render partial: 'cart_item', collection: @cart_items %>
           </table>
+          <div>
+            <div class="pull-right inventory-totals">
+              <strong> Subtotal: </strong> <%= "#{number_to_currency(@shopping_cart.cart_subtotal)}" %>
+            </div>
+            <div class="pull-right inventory-totals">
+              <strong> Shipping: </strong> <%= "#{number_to_currency(@shopping_cart.cart_shipping)}" %>
+            </div>
+            <div class="pull-right inventory-totals">
+              <strong> Total: </strong> <%= "#{number_to_currency(@shopping_cart.cart_total)}" %>
+            </div>
+          </div>
         </div> 
       </div> 
     </div> 

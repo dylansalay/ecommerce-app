@@ -1,11 +1,7 @@
 <div class="cart-card">
   <div class="card-header">
     <span class="title"> Cart Summary </span>
-    <small class='float-right'> 
-      <%= link_to shopping_carts_path do %>
-        <i class="fas fa-cart-plus"></i>
-      <% end %>
-    </small>
+    <%= shopping_cart_link %>
   </div>
   <div class="list-group list-group-flush">
     <% @shopping_cart.cart_items.each do |item| %>

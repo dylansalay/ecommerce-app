@@ -20,7 +20,8 @@ class ShoppingCartsController < ApplicationController
   def shopping_cart_params
     params.require(:shopping_cart).permit(
       :name,
-      shipping_address_attributes: %i[id name phone street1 street2 city state zipcode country]),
-      billing_address_attributes: %i[id name phone street1 street2 city state zipcode country])
+      shipping_address_attributes: %i[id name phone street1 street2 city state zipcode country],
+      billing_address_attributes: %i[id name phone street1 street2 city state zipcode country]
+    )
   end
 end

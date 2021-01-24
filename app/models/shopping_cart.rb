@@ -3,8 +3,8 @@
 class ShoppingCart < ApplicationRecord
   has_many :cart_items, class_name: 'ShoppingCartItem', foreign_key: :shopping_cart_id, dependent: :destroy
   has_many :inventory_items, through: :cart_items, class_name: 'InventoryItem'
-  has_one :shipping_address, as: :addressable, dependent: :destroy, autosave: true, class_name: "ShippingAddress"
-  has_one :billing_address, as: :addressable, dependent: :destroy, autosave: true, class_name: "BillingAddress"
+  has_one :shipping_address, as: :addressable, dependent: :destroy, autosave: true, class_name: 'ShippingAddress'
+  has_one :billing_address, as: :addressable, dependent: :destroy, autosave: true, class_name: 'BillingAddress'
   scope :not_purchased, -> { where(purchased_at: nil) }
   belongs_to :user
 

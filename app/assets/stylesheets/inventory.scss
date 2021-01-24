@@ -192,12 +192,18 @@ footer p {
 
 
 .item-details {
+  padding-top: 30px;
   a {
     float: right;
   }
 }
-.card-header .small {
-  vertical-align: middle;
+.card-header {
+  align-items:center; 
+  display: flex;
+  justify-content: space-between;
+  .small .btn {
+    vertical-align: middle;
+  }
 }
 
 .item-card {

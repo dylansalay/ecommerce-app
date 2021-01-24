@@ -1,0 +1,10 @@
+<div class="inventory-container">
+  <div class="col-md-12">
+    <div class= "col-sm-6 col-md-7">
+      <%= form_for(@shopping_cart, url: shopping_cart_path(@shopping_cart), html: { method: :put }) do |f| %>
+        <%= render partial: 'form', locals: { f: f } %>
+        <%= f.submit :Submit, class: 'btn btn-primary btn-block' %>
+      <% end %>
+    </div>
+  </div>
+</div>

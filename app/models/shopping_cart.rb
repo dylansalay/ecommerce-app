@@ -3,6 +3,7 @@
 class ShoppingCart < ApplicationRecord
   has_many :cart_items, class_name: 'ShoppingCartItem', foreign_key: :shopping_cart_id, dependent: :destroy
   has_many :inventory_items, through: :cart_items, class_name: 'InventoryItem'
+  scope :not_purchased, -> { where(purchased_at: nil) }
   belongs_to :user
 
   validates_presence_of :user

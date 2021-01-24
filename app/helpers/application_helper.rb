@@ -12,9 +12,9 @@ module ApplicationHelper
   end
 
   def admin_link_helper
-    if current_or_guest_user.roles.include?(:site_admin)
-      (link_to 'Admin Dashboard', admin_root_path, class: 'btn btn-primary')
-    end
+    return unless current_or_guest_user.roles.include?(:site_admin)
+
+    (link_to 'Admin Dashboard', admin_root_path, class: 'btn btn-primary')
   end
 
   def copyright_generator

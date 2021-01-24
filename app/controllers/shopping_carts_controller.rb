@@ -8,8 +8,7 @@ class ShoppingCartsController < ApplicationController
     @cart_items = @shopping_cart.cart_items
   end
 
-  def edit
-  end
+  def edit; end
 
   private
 

@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_124_212_123) do
+ActiveRecord::Schema.define(version: 20_210_129_220_639) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20_210_124_212_123) do
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
     t.bigint 'user_id'
+    t.boolean 'billing_same_as_shipping', default: false
     t.index ['user_id'], name: 'index_shopping_carts_on_user_id'
   end
 

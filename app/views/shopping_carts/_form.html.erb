@@ -1,17 +1,30 @@
-<div class='login'>
-  <div class='card'>
-    <div class='card-block'>   
-      <h2>Log in</h2>
-
-        <div class="form-group">
-          <%= f.label :name %><br />
-          <%= f.email_field :name,class: 'form-control' %>
-        </div>
-
-        <div class="form-group">
-          <%= f.label :name %><br />
-          <%= f.password_field :name,class: 'form-control' %>
-        </div>
+<div class="card">  
+  <div class="form-group">
+    <div class="shipping-address">
+      <h2 class="form-title">Shipping Address</h2>
+      <%= f.simple_fields_for :shipping_address, html: { class: 'form-vertical' } do |f| %>
+        <%= f.input :name, label: "First and Last Name" %>
+        <%= f.input :phone %>
+        <%= f.input :street1 %>
+        <%= f.input :street2 %>
+        <%= f.input :city %>
+        <%= f.input :state %>
+        <%= f.input :zipcode %>
+        <%= f.input :country %>
+      <% end %>
+    </div>
+    <div class="billing-address" %>
+      <h2 class="form-title">Billing Address</h2>
+      <%= f.simple_fields_for :billing_address, html: { class: 'form-vertical' } do |f| %>
+        <%= f.input :name, label: "First and Last Name" %>
+        <%= f.input :phone %>
+        <%= f.input :street1 %>
+        <%= f.input :street2 %>
+        <%= f.input :city %>
+        <%= f.input :state %>
+        <%= f.input :zipcode %>
+        <%= f.input :country %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -1,10 +1,14 @@
-<div class="inventory-container">
+<div class="container inventory-container text-muted">
   <div class="col-md-12">
-    <div class= "col-sm-6 col-md-7">
-      <%= form_for(@shopping_cart, url: shopping_cart_path(@shopping_cart), html: { method: :put }) do |f| %>
-        <%= render partial: 'form', locals: { f: f } %>
-        <%= f.submit :Submit, class: 'btn btn-primary btn-block' %>
-      <% end %>
+    <div class="row">
+      <div class= "form col-sm-6 col-md-6">
+        <form>
+          <%= simple_form_for @shopping_cart do |f| %>
+            <%= render partial: 'form', locals: { f: f } %>
+            <%= f.button :submit, class: "btn btn-primary" %>
+          <% end %>
+        </form>
+      </div>
     </div>
   </div>
 </div>

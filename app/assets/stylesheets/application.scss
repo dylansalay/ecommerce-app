@@ -1,3 +1,4 @@
+$theme-colors: ( "bootstrap": #563d7c, "simpleform": #00617f );
  @import "bootstrap/scss/bootstrap";
 
 //  Links
@@ -6,6 +7,10 @@ a:focus,
 a:hover {
   color: #fff;
   text-decoration: none;
+}
+
+.hide {
+  display: none !important;
 }
 
 // Custom Default Button

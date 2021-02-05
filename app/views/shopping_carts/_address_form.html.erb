@@ -1,0 +1,30 @@
+<div class="shipping-address">
+  <h2 class="form-title">Shipping Address</h2>
+  <%= f.simple_fields_for :shipping_address, html: { class: 'form-vertical' } do |f| %>
+    <%= f.input :name, label: "First and Last Name" %>
+    <%= f.input :phone %>
+    <%= f.input :street1 %>
+    <%= f.input :street2 %>
+    <%= f.input :city %>
+    <%= f.input :state %>
+    <%= f.input :zipcode %>
+    <%= f.input :country %>
+  <% end %>
+</div>
+<div class= "form-group mt-4 mb-3", data-controller="shopping-cart">
+  <%= f.input_field :billing_same_as_shipping, as: :boolean, remote: true, format: :js, data: { action: "shopping-cart#toggle", "shopping-cart-target" => "billing_same_as_shipping" }%>
+  Billing is the same as Shipping 
+</div>
+<div class="billing-address">
+  <h2 class="form-title">Billing Address</h2>
+  <%= f.simple_fields_for :billing_address, html: { class: 'form-vertical' } do |f| %>
+    <%= f.input :name, label: "First and Last Name" %>
+    <%= f.input :phone %>
+    <%= f.input :street1 %>
+    <%= f.input :street2 %>
+    <%= f.input :city %>
+    <%= f.input :state %>
+    <%= f.input :zipcode %>
+    <%= f.input :country %>
+  <% end %>
+</div>

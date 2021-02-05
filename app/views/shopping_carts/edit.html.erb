@@ -2,12 +2,14 @@
   <div class="col-md-12">
     <div class="row">
       <div class= "form col-sm-6 col-md-6">
-        <form>
-          <%= simple_form_for @shopping_cart do |f| %>
-            <%= render partial: 'form', locals: { f: f } %>
-            <%= f.button :submit, class: "btn btn-primary" %>
-          <% end %>
-        </form>
+        <%= simple_form_for @shopping_cart do |f| %>
+          <div class="card">  
+            <div class="form-group">
+              <%= render partial: 'address_form', locals: { f: f } %>
+            </div>
+          </div>
+          <%= f.button :submit, class: "btn btn-primary mt-4 pull-right" %>
+        <% end %>
       </div>
     </div>
   </div>

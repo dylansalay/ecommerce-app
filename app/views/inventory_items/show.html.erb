@@ -1,32 +1,38 @@
-<div class="container inventory-container text-muted">
-  <% if current_or_guest_user.type=='AdminUser'%>
-    <%= link_to 'Edit Item', edit_inventory_item_path(@inventory_item), class: 'nav-link' %>
-  <% end %>
-  <div class="row">
-    <div class="col-md-7">
-      <div class="scroller">
-        <% @inventory_item.images.each do |image| %>
-          <div><%= image_tag inventory_img(image.url, 'main'), class: "show-image" %></div>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="col-md-5 item-details">
-      <h1><%= @inventory_item.title %></h1>
-      <em>Price: $<%= @inventory_item.unit_cost %></em>
-      <div class="mt-3">
-        <%= form_for @inventory_item, :url => { controller: 'shopping_cart_items', action: 'create', id: @inventory_item.id }, html: { method: :post } do %>
-          <%= select_tag :quantity, options_for_select(0...16), :value => params[:quantity], prompt: "Select Quantity" %>
-          <%= button_tag "Add to Cart", class: "btn-primary rounded"%>
-        <% end %>     
+<div class="container inventory-container">
+  <div class="album text-muted">
+    
+    <div class="row">
+      <div class="col-md-7">
+        <div class="scroller">
+          <% @inventory_item.images.each do |image| %>
+            <div><%= image_tag inventory_img(image.url, 'main'), class: "show-image" %></div>
+          <% end %>
+        </div>
       </div>
 
-      <hr>
+      <div class="col-md-5 item-details">
+        <div class="row">
+          <h1 class='pl-3'><%= @inventory_item.title %></h1>
+          <div class="right">
+            <% if current_or_guest_user.type=='AdminUser'%>
+              <%= link_to 'Edit Item', edit_inventory_item_path(@inventory_item), class: 'float-right pt-1 pr-3' %>
+            <% end %>
+          </div>
+        </div>
+        <em>Price: $<%= @inventory_item.unit_cost %></em>
+        <div class="mt-3">
+          <%= form_for @inventory_item, :url => { controller: 'shopping_cart_items', action: 'create', id: @inventory_item.id }, html: { method: :post } do %>
+            <%= select_tag :quantity, options_for_select(0...16), :value => params[:quantity], prompt: "Select Quantity" %>
+            <%= button_tag "Add to Cart", class: "btn-primary rounded"%>
+          <% end %>     
+        </div>
 
-      <em><%= @inventory_item.subtitle %></em>
+        <hr>
 
-      <p><%= @inventory_item.body %></p>
-    </div>
-  </div> 
-  <div class="push">   
+        <em><%= @inventory_item.subtitle %></em>
+
+        <p><%= @inventory_item.body %></p>
+      </div>
+    </div> 
+  </div>
 </div>

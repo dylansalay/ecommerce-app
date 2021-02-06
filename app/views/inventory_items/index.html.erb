@@ -1,17 +1,20 @@
-<%= render 'shared/inventory_masthead' %>
-
-<div class="album text-muted">
-  <div class="container">
-    <% if current_or_guest_user.type=='AdminUser'%>
-      <%= link_to 'Add Item', new_inventory_item_path, class: 'nav-link' %>
-    <% end %>
-    <div class="row">
-      <div>
-        <%= render partial: 'inventory_item', collection: @inventory_items %>
+<div class="container inventory-container">>
+  <div class="album text-muted pt-2">
+    <div class="container">
+      <div class='row'>
+        <% if current_or_guest_user.type=='AdminUser'%>
+          <%= link_to 'Add Item', new_inventory_item_path, class: 'pull-left pl-3 pt-2 pb-2' %>
+        <% end %>
       </div>
-      <div class='pag-container'>
-        <%= paginate @inventory_items%>
+      <div class="row">
+        <div>
+          <%= render partial: 'inventory_item', collection: @inventory_items %>
+        </div>
+        <div class='pag-container'>
+          <%= paginate @inventory_items%>
+        </div>
       </div>
     </div>
   </div>
 </div>
+

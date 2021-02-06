@@ -1,6 +1,8 @@
 <div class="container inventory-container">
-  <h1 class='text-center'>Edit Inventory Item</h1>
+  <div class="album text-muted">
+    <h1 class='text-center'>Edit <%= @inventory_item.title %></h1>
 
-  <%= render 'form', inventory_item: @inventory_item %>
+    <%= render 'form', inventory_item: @inventory_item %>
+  </div>
 </div>
 

@@ -27,6 +27,8 @@ a:hover {
 html,
 body {
   height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 body {
   color: #BE8073;
@@ -51,6 +53,7 @@ body {
 .cover-container {
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 15rem;
 }
 
 // Padding for spacing
@@ -157,7 +160,9 @@ body {
 
 // Footer
 .mastfoot {
-  color: black;
+  color: #fff;
+  background-color: #BE8073;
+  border-top: 1px solid black;
 }
 
 // Affix and Center
@@ -241,15 +246,22 @@ body {
   color: black;
   text-align: left;
   width: 55%;
-  margin: auto;
+  margin: 7rem auto auto auto;
 }
 
 .app-card-container > .card {
-  padding: 40px;
+  padding: 25px;
 }
 
 .profile-img {
   border: 1px solid grey;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+iframe {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .app-card-container a {

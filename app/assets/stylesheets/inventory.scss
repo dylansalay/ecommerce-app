@@ -11,6 +11,32 @@
   -webkit-box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
           box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
 }
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  color: #BE8073;
+  text-align: center;
+}
+
+#background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: image-url('background_image.jpg') repeat-x;
+  background-size: contain;
+  background-position: center;
+}
 
 /* Nav links */
 
@@ -114,6 +140,7 @@
 
 .cart-card {
   width: 300px;
+  margin: auto;
 
   .title {
     color: #fff;
@@ -144,34 +171,40 @@
   min-height: 45rem; /* Can be removed; just added for demo purposes */
   padding-top: 3rem;
   padding-bottom: 3rem;
-  background-color: #f7f7f7;
+  background-color: rgba(247, 247, 247, .75);
 }
 
 .card > img {
   margin-bottom: .75rem;
 }
 
-footer {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.inner {
+  padding: 2rem;
+}
 
-  .container {
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+// Footer
+.mastfoot {
+  color: #fff;
+  background-color: #BE8073;
+  border-top: 1px solid black;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  p {
+    font-family: 'Playfair Display', serif;
+    text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
   }
 }
 
-footer p {
-  margin-bottom: .25rem;
-}
 
 .inventory-container {
-  padding-top: 7em;
+  padding: 5em 0;
   margin: 0 auto 0 auto;
+
+  .table-responsive {
+    margin-top: 3rem;
+  }
 
   table {
     margin: 0 auto 1em auto;
@@ -193,9 +226,26 @@ footer p {
   float: left;
 }
 
+.right {
+  position: absolute;
+  right: 0;
+  padding: 15px;
+}
+
+.left {
+  position: absolute;
+  left: 0;
+  padding: 15px;
+}
+
+.block {
+  display: block;
+}
+
 
 .item-details {
   padding-top: 30px;
+  text-align: left;
   a {
     float: right;
   }
@@ -238,17 +288,26 @@ footer p {
   padding: .75rem 2rem;
 }
 
-.form {
-  margin-left: 5rem;
-  justify-content: center;
+.addresses {
+  label {
+    float: left;
+    padding-left: 5px;
+  }
+}
+.billing-address {
+  padding-bottom: 15px;
 }
 
 .form-group{
-  margin: auto;
   padding: 0 15px;
 }
 
+.boolean{
+  text-align: left;
+}
+ 
 .form-title {
   margin: 25px 0;
   padding: 0 15px;
+  text-align: left;
 }

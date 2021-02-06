@@ -1,15 +1,22 @@
-<div class="container inventory-container text-muted">
-  <div class="col-md-12">
-    <div class="row">
-      <div class= "form col-sm-6 col-md-6">
-        <%= simple_form_for @shopping_cart do |f| %>
-          <div class="card">  
-            <div class="form-group">
-              <%= render partial: 'address_form', locals: { f: f } %>
+<div class="container inventory-container">
+  <div class="album text-muted">
+    <div class="col-md-12">
+      <div class="row">
+        <div class= "form col-sm-7 col-md-7">
+          <%= simple_form_for @shopping_cart do |f| %>
+            <div class="card">  
+              <div class="form-group">
+                <%= render partial: 'address_form', locals: { f: f } %>
+              </div>
             </div>
+            <%= f.button :submit, class: "btn btn-primary mt-4 pull-right" %>
+          <% end %>
+        </div>
+        <div class= "col-sm-4 col-md-4">
+          <div class="card">
+            <%= render partial: 'shopping_cart_summary' %>
           </div>
-          <%= f.button :submit, class: "btn btn-primary mt-4 pull-right" %>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>

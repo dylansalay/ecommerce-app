@@ -2,7 +2,7 @@
 
 require 'administrate/base_dashboard'
 
-class ShoppingCartDashboard < Administrate::BaseDashboard
+class BillingAddressDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -10,16 +10,19 @@ class ShoppingCartDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    cart_items: Field::HasMany.with_options(class_name: 'ShoppingCartItem'),
-    inventory_items: Field::HasMany,
-    user: Field::BelongsTo,
-    shipping_address: Field::HasOne,
-    billing_address: Field::HasOne,
+    addressable: Field::Polymorphic,
     id: Field::Number,
     name: Field::String,
-    purchased_at: Field::DateTime,
+    street1: Field::String,
+    street2: Field::String,
+    city: Field::String,
+    state: Field::String,
+    zipcode: Field::String,
+    country: Field::String,
+    phone: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    updated_at: Field::DateTime,
+    type: Field::String
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -28,37 +31,44 @@ class ShoppingCartDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    cart_items
-    inventory_items
-    user
-    shipping_address
-    billing_address
+    addressable
     id
+    name
+    type
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    cart_items
-    user
+    addressable
     id
     name
-    shipping_address
-    billing_address
-    purchased_at
+    street1
+    street2
+    city
+    state
+    zipcode
+    country
+    phone
     created_at
     updated_at
+    type
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    cart_items
-    inventory_items
-    user
+    addressable
     name
-    purchased_at
+    street1
+    street2
+    city
+    state
+    zipcode
+    country
+    phone
+    type
   ].freeze
 
   # COLLECTION_FILTERS
@@ -73,10 +83,10 @@ class ShoppingCartDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how shopping carts are displayed
+  # Overwrite this method to customize how billing addresses are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(shopping_cart)
-  #   "ShoppingCart ##{shopping_cart.id}"
+  # def display_resource(billing_address)
+  #   "BillingAddress ##{billing_address.id}"
   # end
 end

@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     resources :admin_users
     resources :shopping_carts
     resources :shopping_cart_items
+    resources :addresses
+    resources :shipping_addresses
+    resources :billing_addresses
 
     root to: 'users#index'
   end

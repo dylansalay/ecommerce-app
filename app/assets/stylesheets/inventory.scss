@@ -68,6 +68,7 @@ body {
 
 .dropdown-menu {
   background-color: #BE8073;
+  border: none;
 
   .dropdown-item {
     text-align: center;
@@ -141,9 +142,19 @@ body {
 .cart-card {
   width: 300px;
   margin: auto;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: .25rem;
+
+  .card-header {
+    background-color: #BE8073;
+  }
 
   .title {
     color: #fff;
+  }
+
+  .list-group-item {
+    text-align: left;
   }
 }
 
@@ -266,6 +277,7 @@ body {
   padding: .75rem;
   margin-bottom: 2rem;
   border: 0;
+  text-align: left;
 
   .item-cost {
     float: right;

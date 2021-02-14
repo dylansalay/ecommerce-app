@@ -12,7 +12,7 @@ class ShoppingCartsController < ApplicationController
 
   def update
     if @shopping_cart.update(shopping_cart_params)
-      @shopping_cart.billing_address.assign_attributes(@shopping_cart.shipping_address.dup.attributes.except('id')) if @shopping_cart.billing_same_as_shipping?
+      @shopping_cart.billing_address.assign_attributes(@shopping_cart.shipping_address.dup.attributes.except('id', 'type')) if @shopping_cart.billing_same_as_shipping?
       @shopping_cart.save
       redirect_to shopping_carts_path, notice: 'Please review your order details'
     else

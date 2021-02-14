@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
 User.create!(
-    email: "jonnysnow@email.com",
-    password: "testing123",
-    password_confirmation: "testing123",
-    first_name: "Jon",
-    last_name: "Snow",
-    type: "AdminUser",
-    roles: "site_admin"
+  email: 'jonnysnow@email.com',
+  password: 'testing123',
+  password_confirmation: 'testing123',
+  first_name: 'Jon',
+  last_name: 'Snow',
+  type: 'AdminUser',
+  roles: 'site_admin'
 )
-puts " 1 Admin User created"
+puts ' 1 Admin User created'
 
 3.times do |category|
   Category.create!(

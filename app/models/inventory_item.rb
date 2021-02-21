@@ -7,6 +7,10 @@ class InventoryItem < ApplicationRecord
   belongs_to :category
   belongs_to :shopping_cart, optional: true
 
+  has_many :styles, dependent: :destroy, autosave: true, class_name: 'Style'
+
+  accepts_nested_attributes_for :styles, allow_destroy: true
+
   validates :title, presence: true
   validates :body, presence: true
 

@@ -60,6 +60,7 @@ class InventoryItemsController < ApplicationController
 
   def load_inventory_item
     @inventory_item = InventoryItem.friendly.find(params[:id])
+    @inventory_item.styles.build unless @inventory_item.styles.any?
   end
 
   def load_shopping_cart
@@ -69,6 +70,7 @@ class InventoryItemsController < ApplicationController
   end
 
   def inventory_item_params
-    params.require(:inventory_item).permit(:title, :subtitle, :body, :unit_cost, { images: [] }, :thumb_image, :category_id)
+    params.require(:inventory_item).permit(:title, :subtitle, :body, :unit_cost, { images: [] }, :thumb_image, :category_id,
+                                           styles_attributes: %i[id color stone length _destroy])
   end
 end

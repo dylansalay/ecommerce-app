@@ -19,7 +19,7 @@ class InventoryItem < ApplicationRecord
 
   def styles_options_for_select
     options = []
-    self.styles.each do |style|
+    styles.each do |style|
       options << ["#{style.length} | #{style.color}" + (style.stone.present? ? ' | ' + style.stone : '')]
     end
     options

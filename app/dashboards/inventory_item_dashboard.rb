@@ -14,6 +14,7 @@ class InventoryItemDashboard < Administrate::BaseDashboard
     id: Field::Number.with_options(searchable: false),
     subtitle: Field::String.with_options(searchable: true),
     category: Field::BelongsTo.with_options(searchable: false),
+    styles: Field::HasMany.with_options(searchable: false),
     body: Field::Text.with_options(searchable: true),
     unit_cost: Field::String.with_options(searchable: true),
     created_at: Field::DateTime.with_options(searchable: false),
@@ -29,11 +30,12 @@ class InventoryItemDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    category
-    id
-    images
     title
+    id
     body
+    category
+    styles
+    images
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -43,6 +45,7 @@ class InventoryItemDashboard < Administrate::BaseDashboard
     id
     subtitle
     category
+    styles
     body
     unit_cost
     created_at
@@ -59,6 +62,7 @@ class InventoryItemDashboard < Administrate::BaseDashboard
     category
     title
     subtitle
+    styles
     body
     unit_cost
     images

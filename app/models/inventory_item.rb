@@ -16,4 +16,12 @@ class InventoryItem < ApplicationRecord
 
   mount_uploader :thumb_image, ItemUploader
   mount_uploaders :images, ItemUploader
+
+  def styles_options_for_select
+    options = []
+    self.styles.each do |style|
+      options << ["#{style.length} | #{style.color}" + (style.stone.present? ? ' | ' + style.stone : '')]
+    end
+    options
+  end
 end

@@ -323,3 +323,15 @@ body {
   padding: 0 15px;
   text-align: left;
 }
+
+.checkbox {
+  text-align: left;
+  input {
+    margin-left: 10px;
+  }
+}
+
+.flabel {
+  text-align: left;
+  display: block;
+}

@@ -2,7 +2,7 @@
 
 require 'administrate/base_dashboard'
 
-class InventoryItemDashboard < Administrate::BaseDashboard
+class StyleDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -10,18 +10,13 @@ class InventoryItemDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    title: Field::String.with_options(searchable: true),
-    id: Field::Number.with_options(searchable: false),
-    subtitle: Field::String.with_options(searchable: true),
-    category: Field::BelongsTo.with_options(searchable: false),
-    styles: Field::HasMany.with_options(searchable: false),
-    body: Field::Text.with_options(searchable: true),
-    unit_cost: Field::String.with_options(searchable: true),
-    created_at: Field::DateTime.with_options(searchable: false),
-    updated_at: Field::DateTime.with_options(searchable: false),
-    images: Field::Carrierwave.with_options(searchable: false, multiple: true),
-    thumb_image: Field::Carrierwave.with_options(searchable: false),
-    slug: Field::String.with_options(searchable: false)
+    inventory_item: Field::BelongsTo,
+    id: Field::Number,
+    color: Field::String,
+    stone: Field::String,
+    length: Field::String,
+    created_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -30,48 +25,33 @@ class InventoryItemDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    title
+    inventory_item
     id
-    body
-    category
-    styles
-    images
+    color
+    stone
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    title
+    inventory_item
     id
-    subtitle
-    category
-    styles
-    body
-    unit_cost
+    color
+    stone
+    length
     created_at
     updated_at
-    images
-    thumb_image
-    slug
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    category
-    title
-    subtitle
-    styles
-    body
-    unit_cost
-    images
-    thumb_image
+    inventory_item
+    color
+    stone
+    length
   ].freeze
-
-  def permitted_attributes
-    super - [:images] + [{ images: [] }]
-  end
 
   # COLLECTION_FILTERS
   # a hash that defines filters that can be used while searching via the search
@@ -85,10 +65,10 @@ class InventoryItemDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how inventory items are displayed
+  # Overwrite this method to customize how styles are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(inventory_item)
-    inventory_item.title
-  end
+  # def display_resource(style)
+  #   "Style ##{style.id}"
+  # end
 end

@@ -16,6 +16,10 @@
           <%= link_to item.title, inventory_item_path(item.inventory_item_id) %>
         </p>
         <p>
+          <span class="font-weight-bold"> Style: </span>
+          <%= link_to item.style, inventory_item_path(item.inventory_item_id) %>
+        </p>
+        <p>
           <small class="float-right">
             <%= "#{item.quantity} x #{number_to_currency(item.inventory_item.unit_cost)}"  %>
           </small>

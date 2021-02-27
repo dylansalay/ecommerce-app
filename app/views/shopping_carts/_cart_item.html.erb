@@ -4,6 +4,7 @@
     <td> <%= image_tag inventory_img(cart_item.inventory_item.thumb_image.url, 'thumb'), class: 'cart-image' %> </td>
     <td> <%= link_to cart_item.title, inventory_item_path(cart_item.inventory_item_id) %> </td>
     <td> <%= number_to_currency(cart_item.inventory_item.unit_cost) %> </td>
+    <td> <%= cart_item.style %> </td>
     <td> <%= render partial: 'item_quantity_updater', locals: { cart_item: cart_item } %> </td>
     <td> 
       <%= link_to shopping_cart_item_path(cart_item.id), method: :delete, data: { confirm: 'Are you sure?' } do %>

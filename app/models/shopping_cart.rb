@@ -14,24 +14,25 @@ class ShoppingCart < ApplicationRecord
 
   validates_presence_of :user
 
-  def add_item_to_cart(item, quantity = 1)
-    existing_item = cart_items.find_by(inventory_item_id: item.id)
+  def add_item_to_cart(item, quantity = 1, style = '')
+    existing_item = cart_items.where(inventory_item_id: item.id, style: style).first
     if existing_item.present?
       prev_quantity = existing_item.quantity
-      existing_item.update(quantity: (prev_quantity + quantity.to_i))
+      existing_item.update(quantity: (prev_quantity + quantity.to_i), style: style)
       save!
     else
-      new_item(item, quantity)
+      new_item(item, quantity, style)
     end
   end
 
-  def new_item(item, quantity)
+  def new_item(item, quantity, style)
     ShoppingCartItem.transaction do
       ShoppingCartItem.create!(
         shopping_cart: self,
         inventory_item: item,
         title: item.title,
-        quantity: quantity
+        quantity: quantity,
+        style: style
       )
       save!
     end

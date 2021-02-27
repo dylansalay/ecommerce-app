@@ -6,7 +6,7 @@ class ShoppingCartItemsController < ApplicationController
   before_action :load_shopping_cart_item, only: %i[destroy]
 
   def create
-    @shopping_cart.add_item_to_cart(@inventory_item, params[:quantity])
+    @shopping_cart.add_item_to_cart(@inventory_item, params[:quantity], params[:style])
 
     redirect_to inventory_item_path(@inventory_item), notice: 'The item was added to your cart'
   end

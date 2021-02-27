@@ -52,12 +52,17 @@
         <%= f.text_area :body, class: 'form-control', rows: 13 %>
       </div>
     </div>
+
+
     <div class="col-md-3">
-      <div class="form-group mt-3 mb-3">
+      <div class="form-group mt-3 mb-3" data-controller="inventory-item">
+        <%= select_tag :style, options_for_select([(link_to_add_fields 'Add Style', f, :styles)] + inventory_item.styles.map{|s| ["#{s.color + ' ' + s.stone}", s.id]}), include_blank: "Select Style", data: { action: "change->inventory-item#select", "inventory-item-target"=>"select_dropdown" }  %>
         <%= f.fields_for :styles do |f|%>
           <%= render partial: 'style_fields', locals: { f: f } %>
         <% end %>
-        <%= link_to_add_fields 'Add Piece Style', f, :styles %>
+        <div data-inventory-item-target="add_style">
+          <%= link_to_add_fields 'Add Piece Style', f, :styles %>
+        </div>
       </div>
     </div>
 

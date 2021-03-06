@@ -7,7 +7,11 @@ export default class extends Controller {
     $(".style-form").map(function() {
       this.classList.add('hide')
     })
+    console.log($('#style').val("Select Style"))
+
+    this.add_styleTarget.classList.add('hide')
   }
+
 
   select(event) {
     $(".style-form").map(function() {
@@ -25,10 +29,8 @@ export default class extends Controller {
     var select = document.getElementById("style")
     var select_text = select.selectedOptions[0].firstChild.data
 
-    if(select_text != "Add Style"){
-      this.add_styleTarget.classList.add('hide')
-    } else {
-      this.add_styleTarget.classList.remove('hide')
+    if(select_text == "Add Style"){
+      this.add_styleTarget.click()
     }
   }
 }

@@ -18,6 +18,6 @@ class User < ApplicationRecord
   has_many :shopping_carts, dependent: :destroy
 
   def name
-    (first_name + ' ' + last_name).to_s
+    "#{first_name} #{last_name}".to_s
   end
 end

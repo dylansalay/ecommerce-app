@@ -43,7 +43,7 @@ module ApplicationHelper
     partial = if options.include? :partial
                 options[:partial]
               else
-                association.to_s.singularize + '_fields'
+                "#{association.to_s.singularize}_fields"
               end
 
     # Render the form fields from a file with the association name provided
@@ -55,6 +55,8 @@ module ApplicationHelper
     # The rendered fields are sent with the link within the data-form-prepend attr
     html_options['data-form-prepend'] = raw CGI.escapeHTML(fields)
     html_options['href'] = '#'
+    html_options['id'] = 'add-style-link'
+    html_options['data-inventory-item-target'] = 'add_style'
 
     content_tag(:a, name, html_options, &block)
   end

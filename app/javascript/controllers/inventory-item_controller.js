@@ -1,13 +1,12 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "styles", "select_dropdown", "add_style"]
+  static targets = [ "select_dropdown", "add_style"]
 
   connect() {
     $(".style-form").map(function() {
       this.classList.add('hide')
     })
-    console.log($('#style').val("Select Style"))
 
     this.add_styleTarget.classList.add('hide')
   }

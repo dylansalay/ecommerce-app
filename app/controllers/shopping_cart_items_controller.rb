@@ -7,8 +7,13 @@ class ShoppingCartItemsController < ApplicationController
 
   def create
     @shopping_cart.add_item_to_cart(@inventory_item, params[:quantity], params[:style])
-
-    redirect_to inventory_item_path(@inventory_item), notice: 'The item was added to your cart'
+    respond_to do |format|
+      if @shopping_cart.save
+        format.html { redirect_to inventory_item_path(@inventory_item), notice: 'The item was added to your cart' }
+      else
+        format.html { render @inventory_item }
+      end
+    end
   end
 
   def update

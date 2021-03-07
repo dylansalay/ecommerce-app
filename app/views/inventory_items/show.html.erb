@@ -24,7 +24,7 @@
           <%= form_for @inventory_item, :url => { controller: 'shopping_cart_items', action: 'create', id: @inventory_item.id }, html: { method: :post } do %>
             <%= select_tag :quantity, options_for_select(0...16), :value => params[:quantity], include_blank: "Select Quantity", required: true %>
             <%= select_tag :style, options_for_select(@inventory_item.styles_options_for_select), :value => params[:style], include_blank: "Select Style", required: true %>
-            <%= button_tag "Add to Cart", class: "btn-primary rounded"%>
+            <%= button_tag "Add to Cart", class: "btn-primary rounded mt-3"%>
           <% end %>     
         </div>
 

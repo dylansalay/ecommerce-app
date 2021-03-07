@@ -1,5 +1,8 @@
 @import "bootstrap/scss/bootstrap";
 
+.nav-wrapper {
+  height: 15%;
+}
 .inventory-masthead {
   position: fixed;
   width: 100%;
@@ -210,8 +213,7 @@ body {
 
 
 .inventory-container {
-  padding: 5em 0;
-  margin: 0 auto 0 auto;
+  margin: 0 auto 65px auto;
 
   .table-responsive {
     margin-top: 3rem;
@@ -329,9 +331,4 @@ body {
   input {
     margin-left: 10px;
   }
-}
-
-.flabel {
-  text-align: left;
-  display: block;
 }

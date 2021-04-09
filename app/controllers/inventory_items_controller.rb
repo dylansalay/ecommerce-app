@@ -60,7 +60,6 @@ class InventoryItemsController < ApplicationController
 
   def load_inventory_item
     @inventory_item = InventoryItem.friendly.find(params[:id])
-    @inventory_item.styles.build unless @inventory_item.styles.any?
   end
 
   def load_shopping_cart

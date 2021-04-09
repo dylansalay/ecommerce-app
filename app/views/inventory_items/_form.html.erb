@@ -56,7 +56,7 @@
 
     <div class="col-md-3">
       <div class="form-group mt-3 mb-3" data-controller="inventory-item">
-        <%= select_tag :style, options_for_select(['Select Style', 'Add Style'] + inventory_item.styles.map{|s| ["#{s.color + ' ' + s.stone}", s.id]}, "Select Style"), data: { action: "change->inventory-item#select", "inventory-item-target"=>"select_dropdown" }  %>
+        <%= item_style(inventory_item)%>
         <%= f.fields_for :styles do |f|%>
           <%= render partial: 'style_fields', locals: { f: f } %>
         <% end %>

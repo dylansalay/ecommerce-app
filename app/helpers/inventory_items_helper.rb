@@ -19,6 +19,19 @@ module InventoryItemsHelper
     end
   end
 
+  def item_style(item) 
+    options = ['Select Style', 'Add Style']
+    if item.styles.any?
+      styles = (options + item.styles.map{ |s| ["#{s.color + ', ' + s.stone}", s.id] })
+    end
+    
+    select_tag(
+      :style, 
+      options_for_select(styles, "Select Style"), 
+      data: { action: "change->inventory-item#select", "inventory-item-target"=>"select_dropdown" }
+    )
+  end
+
   def inventory_badge_helper
     load_shopping_cart.cart_quantity unless load_shopping_cart.cart_quantity.zero?
   end

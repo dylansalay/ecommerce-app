@@ -25,7 +25,7 @@ module InventoryItemsHelper
 
     select_tag(
       :style,
-      options_for_select(styles, 'Select Style'),
+      options_for_select(styles || options, 'Select Style'),
       data: { action: 'change->inventory-item#select', 'inventory-item-target' => 'select_dropdown' }
     )
   end

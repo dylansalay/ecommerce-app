@@ -1,0 +1,9 @@
+<h1> New Comments </h1>
+
+<%= form_with(model: [ @comment.inventory_item, @comment ]) do |form| %>
+  <div class="field">
+    <%= form.text_field :content%>
+    <%= form.submit "Send" %>
+  </div>
+<% end %>
+<%= link_to "Back", @comment.inventory_item %>

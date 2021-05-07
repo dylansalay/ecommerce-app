@@ -35,5 +35,20 @@
         <p class="mt-2"><%= @inventory_item.body %></p>
       </div>
     </div> 
+
+    <div class="row">
+      <div class="col-md-8">
+        <div class="form-group mb-4">
+          <label class="pull-left pl-4">
+            <%= link_to "New Comment", new_inventory_item_comment_path(@inventory_item) %>
+          </label>
+        </div>
+        <div class="comments">
+          <ol class="list-group list-group-numbered">
+            <%= render @inventory_item.comments %>
+          </ol>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

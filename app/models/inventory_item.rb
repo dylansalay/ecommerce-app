@@ -8,6 +8,7 @@ class InventoryItem < ApplicationRecord
   belongs_to :shopping_cart, optional: true
 
   has_many :styles, dependent: :destroy, class_name: 'Style'
+  has_many :comments, dependent: :destroy, class_name: 'Comment'
 
   accepts_nested_attributes_for :styles, allow_destroy: true
 

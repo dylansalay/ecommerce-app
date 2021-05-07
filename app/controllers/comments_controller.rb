@@ -9,7 +9,6 @@ class CommentsController < ApplicationController
     @comment = @inventory_item.comments.new(comment_params)
     @comment.user = current_or_guest_user
     @comment.save
-    binding.pry
 
     respond_to do |format|
       format.html { redirect_to @inventory_item }

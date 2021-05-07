@@ -1,5 +1,10 @@
 class CommentsController < ApplicationController
-  before_action :set_inventory_item, only: %i[ new create ]
+  before_action :set_inventory_item
+  before_action :set_comment, only: %i[ destroy ]
+
+  def index
+    @comments = @inventory_item.comments
+  end
 
   def new
     @comment = @inventory_item.comments.new
@@ -7,7 +12,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @inventory_item.comments.new(comment_params)
-    @comment.user = current_or_guest_user
+    @comment.user_name = @comment.commentor_name(current_or_guest_user)
     @comment.save
 
     respond_to do |format|
@@ -15,9 +20,28 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    if @comment.can_delete?(current_or_guest_user)
+      @comment.destroy
+      respond_to do |format|
+        format.html { redirect_back fallback_location: root_path, notice: 'Your comment was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_back fallback_location: root_path, notice: 'You do not have permission to remove this comment' }
+        format.json { head :no_content }
+      end
+    end
+  end
+
   private
     def set_inventory_item
       @inventory_item = InventoryItem.find_by(slug: params[:inventory_item_id])
+    end
+
+    def set_comment
+      @comment = @inventory_item.comments.find(params[:id])
     end
 
     def comment_params

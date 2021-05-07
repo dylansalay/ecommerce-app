@@ -38,12 +38,11 @@ ActiveRecord::Schema.define(version: 2021_04_30_205129) do
 
   create_table "comments", force: :cascade do |t|
     t.bigint "inventory_item_id", null: false
-    t.bigint "user_id", null: false
     t.text "content"
+    t.string "user_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["inventory_item_id"], name: "index_comments_on_inventory_item_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -122,7 +121,6 @@ ActiveRecord::Schema.define(version: 2021_04_30_205129) do
   end
 
   add_foreign_key "comments", "inventory_items"
-  add_foreign_key "comments", "users"
   add_foreign_key "inventory_items", "categories"
   add_foreign_key "shopping_carts", "users"
   add_foreign_key "styles", "inventory_items"

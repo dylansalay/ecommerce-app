@@ -33,8 +33,4 @@ module InventoryItemsHelper
   def inventory_badge_helper
     load_shopping_cart.cart_quantity unless load_shopping_cart.cart_quantity.zero?
   end
-
-  def comment_user(comment)
-    comment.user.guest? ? "Guest User #{comment.user.id}" : comment.user.name
-  end
 end

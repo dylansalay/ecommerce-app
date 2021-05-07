@@ -16,7 +16,6 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   has_many :shopping_carts, dependent: :destroy
-  has_many :comments
 
   def name
     "#{first_name} #{last_name}".to_s

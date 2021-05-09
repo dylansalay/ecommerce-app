@@ -16,11 +16,11 @@ gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -66,6 +66,7 @@ gem 'devise-guests', '~> 0.7.0'
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
 gem 'friendly_id', '~> 5.4'
 gem 'kaminari', '~> 1.2', '>= 1.2.1'
+gem 'hotwire-rails', '~> 0.1.3'
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 gem 'petergate', '~> 2.0', '>= 2.0.1'
 gem 'pry', '~> 0.13.1'

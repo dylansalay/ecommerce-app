@@ -22,6 +22,6 @@ class User < ApplicationRecord
   end
 
   def commentor_name
-    self.guest? ? "Guest User #{self.id}" : self.name
+    guest? ? "Guest User #{id}" : name
   end
 end

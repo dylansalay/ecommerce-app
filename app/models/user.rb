@@ -20,4 +20,8 @@ class User < ApplicationRecord
   def name
     "#{first_name} #{last_name}".to_s
   end
+
+  def commentor_name
+    self.guest? ? "Guest User #{self.id}" : self.name
+  end
 end

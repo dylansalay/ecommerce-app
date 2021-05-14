@@ -1,9 +1,18 @@
 <h1> New Comments </h1>
 
-<%= form_with(model: [ @comment.inventory_item, @comment ]) do |form| %>
-  <div class="field">
-    <%= form.text_field :content%>
-    <%= form.submit "Send" %>
-  </div>
+<%= turbo_frame_tag "new_comment" do %>
+  <%= form_with(model: [ @comment.inventory_item, @comment ], local: true) do |form| %>
+    <div class="form-group">
+      <%= form.label :user_name, class: 'pull-left' %>
+      <%= form.text_field :user_name, value: current_or_guest_user.commentor_name, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= form.label :content, class: 'pull-left' %>
+      <%= form.text_field :content, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= form.submit 'Add Comment', data: { disable_with: false }, class: 'pull-right btn btn-primary mb-3' %>
+    </div>
+  <% end %>
 <% end %>
 <%= link_to "Back", @comment.inventory_item %>

@@ -11,11 +11,9 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = @inventory_item.comments.new(comment_params)
-    @comment.user_name = @comment.commentor_name(current_or_guest_user)
-    @comment.save
-
+    @comment = @inventory_item.comments.create!(comment_params)
     respond_to do |format|
+      format.turbo_stream
       format.html { redirect_to @inventory_item }
     end
   end
@@ -45,6 +43,6 @@ class CommentsController < ApplicationController
     end
 
     def comment_params
-      params.require(:comment).permit(:content)
+      params.require(:comment).permit(:content, :user_name)
     end
 end

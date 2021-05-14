@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   before_action :set_inventory_item
-  before_action :set_comment, only: %i[ destroy ]
+  before_action :set_comment, only: %i[destroy]
 
   def index
     @comments = @inventory_item.comments
@@ -11,11 +13,9 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = @inventory_item.comments.new(comment_params)
-    @comment.user_name = @comment.commentor_name(current_or_guest_user)
-    @comment.save
-
+    @comment = @inventory_item.comments.create!(comment_params)
     respond_to do |format|
+      format.turbo_stream
       format.html { redirect_to @inventory_item }
     end
   end
@@ -36,15 +36,16 @@ class CommentsController < ApplicationController
   end
 
   private
-    def set_inventory_item
-      @inventory_item = InventoryItem.find_by(slug: params[:inventory_item_id])
-    end
 
-    def set_comment
-      @comment = @inventory_item.comments.find(params[:id])
-    end
+  def set_inventory_item
+    @inventory_item = InventoryItem.find_by(slug: params[:inventory_item_id])
+  end
 
-    def comment_params
-      params.require(:comment).permit(:content)
-    end
+  def set_comment
+    @comment = @inventory_item.comments.find(params[:id])
+  end
+
+  def comment_params
+    params.require(:comment).permit(:content, :user_name)
+  end
 end

@@ -37,6 +37,26 @@ body {
   font-family: 'Playfair Display', serif;
 }
 
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.right {
+  position: absolute;
+  right: 0;
+  padding: 15px;
+}
+
+.left {
+  position: absolute;
+  left: 0;
+  padding: 15px;
+}
+
 // Extra markup and styles for table-esque vertical and horizontal centering
 .site-wrapper {
   display: table;

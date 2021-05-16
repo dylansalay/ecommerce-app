@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :styles
     resources :inventory_items
+    resources :comments
     resources :shopping_carts
     resources :shopping_cart_items
     resources :addresses

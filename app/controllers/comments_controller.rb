@@ -24,6 +24,7 @@ class CommentsController < ApplicationController
     if @comment.can_delete?(current_or_guest_user)
       @comment.destroy
       respond_to do |format|
+        format.turbo_stream
         format.html { redirect_back fallback_location: root_path, notice: 'Your comment was successfully destroyed.' }
         format.json { head :no_content }
       end

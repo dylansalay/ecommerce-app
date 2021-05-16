@@ -43,7 +43,12 @@ body {
 
 .comments {
   padding: 10px 40px;
+
+  .form-group {
+    padding: 0px;
+  }
 }
+
 .comment {
   text-align: left;
 }

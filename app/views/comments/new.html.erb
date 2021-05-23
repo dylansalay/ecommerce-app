@@ -8,6 +8,10 @@
       <%= form.text_field :content, class: 'form-control' %>
     </div>
     <div class="form-group">
+      <%= form.label :rating, class: 'pull-left pr-3' %>
+      <%= form.select :rating, (1..5), class: 'form-control' %>
+    </div>
+    <div class="form-group">
       <%= form.submit 'Add Comment', data: { disable_with: false }, class: 'pull-right btn btn-primary mb-3' %>
     </div>
   <% end %>

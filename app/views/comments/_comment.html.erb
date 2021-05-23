@@ -2,6 +2,12 @@
   <li class="list-group-item justify-content-between align-items-start">
     <div>
       <span class="font-weight-bold"> <%= comment.user_name %> </span>
+      <% comment.rating.to_i.times do %>
+        <i class="pl-3 fas fa-star star"></i>
+      <% end %>
+      <% comment.blank_stars.to_i.times do %>
+        <i class="pl-3 far fa-star star"></i>
+      <% end %>
       <small class= <%= "float-right #{'hidden' unless comment.can_delete?(current_or_guest_user)}" %>>
         <%= link_to inventory_item_comment_path(id: comment.id, inventory_item_id: comment.inventory_item.slug), method: :delete, data: { confirm: 'Are you sure?' } do %>
           <i class="fas fa-trash"></i>

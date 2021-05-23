@@ -6,6 +6,7 @@ class CreateComments < ActiveRecord::Migration[6.0]
       t.references :inventory_item, null: false, foreign_key: true
       t.text :content
       t.string :user_name
+      t.integer :rating
 
       t.timestamps
     end

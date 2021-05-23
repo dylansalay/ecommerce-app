@@ -18,7 +18,7 @@ module ApplicationHelper
   end
 
   def copyright_generator
-    @copyright = CopyrightGeneratorConcern::Renderer.copyright 'Haley Knox', 'All rights reserved'
+    @copyright = CopyrightGeneratorConcern::Renderer.copyright 'Dylan Salay', 'All rights reserved'
   end
 
   def link_to_add_fields(name = nil, form = nil, association = nil, options = nil, html_options = nil, &block)

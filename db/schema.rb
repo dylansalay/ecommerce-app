@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -41,6 +39,7 @@ ActiveRecord::Schema.define(version: 20_210_430_205_129) do
     t.bigint 'inventory_item_id', null: false
     t.text 'content'
     t.string 'user_name'
+    t.integer 'rating'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
     t.index ['inventory_item_id'], name: 'index_comments_on_inventory_item_id'

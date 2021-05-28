@@ -8,8 +8,15 @@
       <%= form.text_field :content, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= form.label :rating, class: 'pull-left pr-3' %>
-      <%= form.select :rating, (1..5), class: 'form-control' %>
+      <div data-controller="rating">
+        <%= form.label :rating, class: 'pull-left pr-3' %>
+        <%= form.hidden_field :rating, id: "rating" %>
+        <% 5.times do %>
+          <div data-action="mouseover->rating#addFill mouseout->rating#removeFill click->rating#addRating">
+            <i data-rating-target="star" class='pl-3 far fa-star rating-stars pull-left star'></i>
+          </div>
+        <% end %>
+      </div>
     </div>
     <div class="form-group">
       <%= form.submit 'Add Comment', data: { disable_with: false }, class: 'pull-right btn btn-primary mb-3' %>
